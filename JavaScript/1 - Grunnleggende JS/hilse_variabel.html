@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilse</title>
+</head>
+<body>
+<h1>Velkommen til 2IT!</h1>
+
+<p id="txtUt"></p>
+</body> 
+<script>
+tekstUt = document.getElementById("txtUt");    
+navn = prompt("Hva heter du?");
+etternavn = prompt("Etternavn?");
+farge = prompt("Ønsket bgfarge? (blue/red/pink): ");
+
+document.body.style = "background-color:"+farge;
+tekstUt.innerHTML = "Velkommen til oss, kjære " + navn + " " + etternavn;
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestille kaffe og kake</title>
+    <style>
+        body{
+            background-color: #a8dadc;
+        }
+        button{
+            color: #f1faee;
+            background-color: #1d3557;
+        }
+    </style>
+</head>
+<body>
+<!--Brukeren skal velge antall kaffe og antall kaker
+, og få ut en kvittering på formen:
+2 kaffe: 50 kr
+3 kaker: 90 kr
+Totalpris: 140 kr
+(Hvis totalprisen er mer enn 250 kr, gis det 10 prosent avslag.)-->
+
+<label for="inpKaffe">Velg antall kaffe</label><br>
+<input id="inpKaffe" type="number"><br>
+<label for="inpKake">Velg antall kaker</label><br>
+<input id="inpKake" type="number"><br>
+<button onclick="bestill()">Bestill og vis kvittering</button>
+<p id="txtUt"></p>
+</body>
+<script>
+function bestill(){
+    // Les inn antall kaker og kaffe og lagre i variabler
+    const antallKaker = Number(inpKake.value);
+    const antallKaffe = Number(inpKaffe.value);
+
+    // Regn ut totalpris
+    let totalpris = antallKaker*kakepris + antallKaffe*kaffepris;
+    // Lag en variabel kvittering, og lagre kvitteringsteksten.
+    let kvittering = `<h3>Kvittering</h3>
+    Kaffe: ${antallKaffe}. Pris: ${antallKaffe*kaffepris} kr<br>
+    Kake: ${antallKaker}. Pris: ${antallKaker*kakepris} kr<hr>
+    Totalpris: ${totalpris} kr.`;
+    
+    // Til slutt: Bruk if-setning og regn ut rabattert pris
+    // dersom totalprisen er mer enn 250 kr.
+    if (totalpris > 250) {
+        totalpris *= 0.9;  // 10 % rabatt
+        kvittering += `Du fikk 10 prosent rabatt!<br>
+        Ny pris er ${totalpris} kr.`;
+    }
+    // Skriv ut kvittering i et p-element. NB! p må lages.
+    txtUt.innerHTML = kvittering;
+}
+let inpKake = document.getElementById("inpKake");
+let inpKaffe = document.getElementById("inpKaffe");
+let txtUt = document.getElementById("txtUt");
+const kaffepris = 25;  // const betyr konstant
+const kakepris = 30;
+
+</script>
+</html>

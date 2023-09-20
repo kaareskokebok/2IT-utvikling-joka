@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endre Bakgrunnsfarge med Range</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            animation: 2s;
+        }
+        #colorRange {
+            width: 80%;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<input type="range" id="colorRange" min="0" max="255" value="0">
+<label for="colorRange" id="rangeValue">0</label>
+
+<script>
+    const range = document.getElementById('colorRange');
+    const rangeValue = document.getElementById('rangeValue');
+
+    range.addEventListener('input', function() {
+        // Få den nåværende verdien av range-elementet.
+        let value = this.value;
+
+        // Oppdater teksten som viser verdien.
+        rangeValue.textContent = `${value}`;
+
+        // Kalkuler RGB-verdien for svartprosenten.
+        let whiteColorValue = 255 - value;
+
+        // Endre bakgrunnsfargen på body til den kalkulerte verdien.
+        document.body.style.backgroundColor = `rgb(${whiteColorValue}, ${whiteColorValue}, ${whiteColorValue})`;
+    });
+</script>
+
+</body>
+</html>

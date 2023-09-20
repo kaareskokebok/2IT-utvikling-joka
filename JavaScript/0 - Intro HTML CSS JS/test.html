@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Bilder</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content:flex-start;
+            align-items: center;
+        }
+
+        .flex-item {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .caption {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+    <div class="flex-item">
+        <div></div>
+        <div class="caption">Bilde 1</div>
+    </div>
+    <div class="flex-item">
+        <div></div>
+        <div class="caption">Bilde 2</div>
+    </div>
+    <div class="flex-item">
+        <div></div>
+        <div class="caption">Bilde 3</div>
+    </div>
+    <div class="flex-item">
+        <div></div>
+        <div class="caption">Bilde 4</div>
+    </div>
+</div>
+
+</body>
+</html>

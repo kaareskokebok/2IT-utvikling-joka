@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JS intro</title>
+</head>
+<body>
+<h1 id="minOverskrift">Velkommen til fiskeverdenen!</h1>
+<p id="txt">Jeg liker å fiske.</p>
+</body>
+<script>
+    // alert("Du må like å fiske!!!");
+    // alert("Hvis ikke, dra hjem!");
+    // prompt("Liker du??");
+    // prompt("Er du sikker?");
+
+    /* document.write("Skrevet med javascript");
+    document.write("Mer txt med JS");
+    console.log("Til konsollen"); */
+
+    // Endre HTML-elementer ved JS
+    document.getElementById("minOverskrift").innerHTML 
+    = "Endret overskrift";
+    // Endre p-elementet til Jeg liker ikke å fiske.
+    document.getElementById("txt").innerHTML 
+    = "Jeg liker ikke å fiske.";
+
+</script>
+</html>

@@ -1,0 +1,30 @@
+
+# Dette programmet simulerer en lysbryter
+
+# Startverdi for pærestatus. True betyr at pæra er på, False betyr at den er av.
+pære_status = False
+
+# Hovedloop for programmet. Programmet vil kjøre så lenge denne er True.
+while True:
+    # Vis meny til bruker
+    print("\nMeny:")
+    print("1 - Skru på pæra")
+    print("2 - Skru av pæra")
+    print("3 - Avslutt programmet")
+    
+    # Be brukeren om å gjøre et valg
+    valg = input("Ditt valg (1-2-3): ")
+    
+    # TODO: Legg til kode for å håndtere brukerens valg.
+    # Hint: Bruk en if-elif-else struktur for å sjekke hva brukeren valgte.
+    # Husk å oppdatere pære_status basert på brukerens handlinger.
+    
+    # TODO: For "Skru på pæra", sjekk først om pæra allerede er på.
+    # Hvis den er på, vis en melding til brukeren. Hvis den er av, skru den på.
+    
+    # TODO: For "Skru av pæra", gjør tilsvarende som over, men for avslått tilstand.
+    
+    # TODO: For "Avslutt programmet", avslutt hovedloopen slik at programmet avsluttes.
+
+# Dette er bare en grunnleggende struktur for programmet. 
+# Husk å legge til ekstra funksjonalitet som beskrevet i oppgaven!

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logg inn</title>
+</head>
+<body>
+<!--Brukeren skriver inn pin-kode, trykker på logg inn,
+     og får vite om han er logget inn eller ikke.-->
+
+<label>Oppgi pin-kode</label><br>
+<input id="inpPin" type="password"><br>
+<button onclick="loggInn()">Logg inn</button>
+<p id="txtUt"></p>
+</body> 
+
+<script>
+function loggInn(){
+    let brukerPin = document.getElementById("inpPin").value;
+    // Sjekk om pin er riktig
+    if (brukerPin == fasitPin){
+        // Gi tilbakemelding i p-elementet
+        tekstUt.innerHTML = "Du er logget inn";
+    }else{
+        // Gi melding om ikke logget inn
+        tekstUt.innerHTML = "Feil pin, prøv igjen!";
+        // Ekstra: Slett alt på nettsiden og sett rød bakgrunnsfarge
+    }
+}
+
+// Følgende kodelinje sletter alt på nettsiden
+//document.body.innerHTML = "";
+let fasitPin = "7890";
+let tekstUt = document.getElementById("txtUt");
+</script>
+</html>
+
+
+
+
+

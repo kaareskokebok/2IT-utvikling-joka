@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lage bruker</title>
+</head>
+<body>
+
+</body> 
+<script>
+function reset(){
+    size = 50;
+    size_txt = size.toString() + "px";
+    knapp.style.width = size_txt;
+    knapp.style.height = size_txt;
+    knapp2.style.width = size_txt;
+    knapp2.style.height = size_txt;
+}
+function mindre(){
+    size = size * 1/1.3;  
+    size_txt = size.toString() + "px";
+    knapp.style.width = size_txt;
+    knapp.style.height = size_txt;
+    knapp2.style.width = size_txt;
+    knapp2.style.height = size_txt;
+}
+function storre(){
+    size = size * 1.3;  // Øker size med 30 prosent
+    // Legge til enhet px på size
+    size_txt = size.toString() + "px";
+    //console.log(size_txt);
+    knapp.style.width = size_txt;
+    // TODO 1: Endre slik at både høyden og bredden endres på samme måte
+    knapp.style.height = size_txt;
+    // TODO 2: Legg til en knapp som gjør knappen med ID 'btn' 30 prosent mindre
+    // Tips: gange med 0.7
+    // TODO 3: Endre koden slik at begge knappene vokser/minker på samme måte.
+    knapp2.style.width = size_txt;
+    knapp2.style.height = size_txt;
+    // TODO 4: Legg til en tredje knapp som setter størrelsen til knapp 1 og 2 til
+    // standardstørrelsen 50px bredde og 50 px høyde.
+}
+
+let knapp = document.getElementById("btn");
+let knapp2 = document.getElementById("btn2");
+let size = 50;
+</script>
+</html>

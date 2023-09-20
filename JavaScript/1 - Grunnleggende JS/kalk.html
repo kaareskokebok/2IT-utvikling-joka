@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logg inn</title>
+</head>
+<body>
+<!--Brukeren skriver inn to tall, trykker på +, -, * eller /,
+     og får se regnestykket med svaret. F.eks. hvis brukeren skriver inn
+    3 og 5 og trykker på +, viser nettsiden teksten 3 + 5 = 8.
+-->
+
+<label>Oppgi to tall, og velg regneoperasjon</label><br>
+<input type="number" id="inpTall1"> <input type="number" id="inpTall2">
+<br>
+<button onclick="pluss()">+</button>
+<button>-</button>
+<button>*</button>
+<button>/</button>
+<p id="txtUt"></p>
+</body> 
+
+<script>
+function pluss(){
+    // Lese inn tallene fra input-boksene
+    let tall1 = document.getElementById("inpTall1").value;
+    let tall2 = document.getElementById("inpTall2").value;
+    console.log(typeof(tall1));  // string
+    // Konverterer tallene til Number
+    tall1 = Number(tall1);
+    tall2 = Number(tall2);
+    console.log(typeof(tall1));  // number
+    // Regne ut svaret
+    let svar = tall1 + tall2;
+    
+    // Skrive ut resultatet i p txtUt
+    let resultatTekst = `${tall1} + ${tall2} = ${svar}`;  // Template string
+    tekstUt.innerHTML = resultatTekst;
+
+}
+
+let tekstUt = document.getElementById("txtUt");
+
+</script>
+</html>
+
+
+
+
+
