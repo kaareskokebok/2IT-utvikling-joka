@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Drawing with Canvas</title>
+</head>
+<body>
+
+<canvas id="diceCanvas" width="200" height="200"></canvas>
+<br>
+<!-- TODO -->
+
+<script src="tegn_terning.js"></script>
+<script>
+    drawDice(3);  // Funksjonen ligger i tegn_terning.js
+    const canvas = document.getElementById('diceCanvas');
+    canvas.addEventListener("click", kastterning);
+
+    function kastterning() {
+        let kast = parseInt(Math.random() * 6) + 1;
+        // Tegn terning
+
+        // TODO
+    }
+
+    // TODO
+</script>
+
+</body>
+</html>
