@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range</title>
+    <style>
+        #boks{
+            background-color: pink;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<label for="rngWidth">Velg bredde på boksen</label><br>
+<input id="rngWidth" type="range" value="50" min="50" max="400"> <br>
+
+<!--Boksen lages med et div-element-->
+<div id="boks"></div>
+
+<script>
+function endreBredde(){
+    // Hente ut verdien til slideren
+    let bredde = rngWidth.value + "px";
+    // Endre bredden til boksen
+    boks.style.width = bredde; 
+
+}
+let rngWidth = document.getElementById("rngWidth");
+rngWidth.addEventListener("input", endreBredde);
+
+// TODO: Lag en ny slider, som endrer høyden til boksen
+// TODO: Lag en tredje slider, som setter bakgrunnsfargen til boksen
+// vha. rgb. Slideren bør da ha min 0 og max 255.
+</script>
+</body>
+</html>
