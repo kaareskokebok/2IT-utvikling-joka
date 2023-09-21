@@ -6,7 +6,8 @@
     <title>Range</title>
     <style>
         #boks{
-            background-color: pink;
+            background-color: rgb(255, 255, 255);
+            border: 3mm solid black;
             width: 50px;
             height: 50px;
         }
@@ -30,9 +31,13 @@ function endreBredde(){
 let rngWidth = document.getElementById("rngWidth");
 rngWidth.addEventListener("input", endreBredde);
 
-// TODO: Lag en ny slider, som endrer høyden til boksen
-// TODO: Lag en tredje slider, som setter bakgrunnsfargen til boksen
+// TODO 1: Lag en ny slider, som endrer høyden til boksen
+// TODO 2: Lag en tredje slider, som setter bakgrunnsfargen til boksen
 // vha. rgb. Slideren bør da ha min 0 og max 255.
+// TODO 3: Lag en fjerde slider, med bredde 100% av body sin bredde.
+// dersom denne dras helt til høyre, slettes alt innhold på nettsiden,
+// body får rød bakgrunnsfarge, og tre pop-up bokser på rad med
+// teksten "MORNA, JENS!".
 </script>
 </body>
 </html>
