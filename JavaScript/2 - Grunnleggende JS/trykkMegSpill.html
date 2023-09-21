@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klikk knapp. Vinn penger.</title>
+    <style>
+        #knapp{
+            position: absolute;
+            left:50%;
+            top:50%;
+        }
+    </style>
+</head>
+<body>
+<button id="knapp">Vinn 10 millioner kr!</button>
+
+<script>
+function vant(){
+    document.body.innerHTML = "<h1>GRATULERER! DU VANT 10 MILLIONER KR!</h1>";
+}
+
+function flytt(){
+    //knapp.style.height = "400px";
+    // Math.random() gir fra 0 til 1
+    let venstre = Math.random()*100;
+    knapp.style.left = `${venstre}%`;
+    let topp = Math.random()*100;
+    knapp.style.top = `${topp}%`;
+}
+knapp = document.getElementById("knapp");
+// Når knappen trykkes på, kjør funksjonen vant
+knapp.addEventListener("click", vant);
+knapp.addEventListener("mouseover", flytt);
+</script>
+</body>
+
+</html>
