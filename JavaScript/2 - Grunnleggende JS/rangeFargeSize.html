@@ -17,6 +17,15 @@
 <label for="rngWidth">Velg bredde på boksen</label><br>
 <input id="rngWidth" type="range" value="50" min="50" max="400"> <br>
 
+<label for="rngHeight">Velg høyde på boksen</label><br>
+<input id="rngHeight" type="range" value="50" min="50" max="400"> <br>
+
+<label for="rngColor">Velg bakgrunnsfarge for boksen</label><br>
+<input id="rngColor" type="range" value="255" min="0" max="255"> <br>
+
+<label for="rngClear">Dra for å slette innhold</label><br>
+<input id="rngClear" type="range" value="0" min="0" max="100" style="width:100%"> <br>
+
 <!--Boksen lages med et div-element-->
 <div id="boks"></div>
 
@@ -26,18 +35,40 @@ function endreBredde(){
     let bredde = rngWidth.value + "px";
     // Endre bredden til boksen
     boks.style.width = bredde; 
-
 }
+
+function endreHoyde() {
+    let hoyde = rngHeight.value + "px";
+    boks.style.height = hoyde;
+}
+
+function endreFarge() {
+    let farge = "rgb(" + rngColor.value + "," + rngColor.value + "," + rngColor.value + ")";
+    boks.style.backgroundColor = farge;
+}
+
+function slettInnhold() {
+    if (rngClear.value == 100) {
+        document.body.innerHTML = '';
+        document.body.style.backgroundColor = 'red';
+        alert("MORNA, JENS!");
+        alert("MORNA, JENS!");
+        alert("MORNA, JENS!");
+    }
+}
+
 let rngWidth = document.getElementById("rngWidth");
 rngWidth.addEventListener("input", endreBredde);
 
-// TODO 1: Lag en ny slider, som endrer høyden til boksen
-// TODO 2: Lag en tredje slider, som setter bakgrunnsfargen til boksen
-// vha. rgb. Slideren bør da ha min 0 og max 255.
-// TODO 3: Lag en fjerde slider, med bredde 100% av body sin bredde.
-// dersom denne dras helt til høyre, slettes alt innhold på nettsiden,
-// body får rød bakgrunnsfarge, og tre pop-up bokser på rad med
-// teksten "MORNA, JENS!".
+let rngHeight = document.getElementById("rngHeight");
+rngHeight.addEventListener("input", endreHoyde);
+
+let rngColor = document.getElementById("rngColor");
+rngColor.addEventListener("input", endreFarge);
+
+let rngClear = document.getElementById("rngClear");
+rngClear.addEventListener("change", slettInnhold);
+
 </script>
 </body>
 </html>
