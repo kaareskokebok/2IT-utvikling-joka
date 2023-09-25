@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straffekonk simulator</title>
+    <style>
+        .bar-container{
+            display: flex;
+            align-items:center;
+        }
+        .soyletxt {
+            margin-left: 0.3cm;
+        }
+        #soyleMaal{
+            background-color: blue;
+            color: antiquewhite;
+            height: 40px;
+            width: 40px;
+        }
+        #soyleSkudd{
+            background-color:crimson;
+            color: antiquewhite;
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fabians fotballsimulering</h1>
+<p>Fabian spiller fotball. Han skårer på straffe med 70 % sannsynlighet.</p>
+<p>Trykk på knappen for å la Fabian sparke.</p>
+<button onclick="spark()" type="button">Spark!</button>
+<p id="txtUt"></p>
+
+<div class="bar-container">
+<div id="soyleMaal"></div><div class="soyletxt"id="soyleMaalTxt">Mål: 0</div>
+</div>
+<div class="bar-container">
+<div id="soyleSkudd"></div><div class="soyletxt" id="soyleSkuddTxt">Skudd: 0</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

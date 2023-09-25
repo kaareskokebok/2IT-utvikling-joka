@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Straffekonk simulator</title>
 </head>
 <body>
     <h1>Fabians fotballsimulering</h1>
@@ -12,29 +12,6 @@
 <button onclick="spark()" type="button">Spark!</button>
 <p id="txtUt"></p>
 
-<script>
-    function spark(){
-       if (Math.random() < 0.70){
-        txtUt.textContent = "MÅL!";
-        // Øk maal med 1
-        maal += 1;
-        } else{
-        txtUt.textContent = "Du bomma!";
-        }
-        skudd += 1;
-        treffrate = (maal / skudd) * 100;
-        txtUt.innerHTML += `<br>Antall mål: ${maal}`;
-        txtUt.innerHTML += `<br>Antall skudd: ${skudd}`;
-        txtUt.innerHTML += `<br>Treffraten: ${treffrate.toFixed(0)} %`;
-    }
-    // TODO 2: Hold tellinga på antall mål.
-    let maal = 0;
-    // TODO 3: Hold tellinga på antall skudd totalt.
-    let skudd = 0;
-    // TODO 4: Vis treffraten (antall mål / antall skudd)
-    let treffrate = 0;
-    
-    
-</script>
+<script src="script.js"></script>
 </body>
 </html>
