@@ -21,7 +21,7 @@
 
 ---
 
-1. Hva returnerer følgende kode?
+3. Hva returnerer følgende kode?
    - a) 105  
    - b) 15  
    - c) "105" **riktig**
