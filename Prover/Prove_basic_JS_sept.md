@@ -1,5 +1,6 @@
 # Prøve i Utvikling: Grunnleggende JavaScript med løsning
 ### Del 1: Flervalgsdel
+**Løsning:** 1a, 2c, 3c, 4d, 5a, 6b, 7c, 8c, 9b, 10b, 11a, 12a, 13b, 14c
 
 1. Hva gjør følgende JavaScript-kode?
     - a) Setter `x` til 15. **riktig**
@@ -73,8 +74,8 @@
 ---
 
 8. Hva er riktig måte å kommentere ut flere linjer med kode i JavaScript?
-   - a) <!-- Dette er en kommentar -->
-   - b) // Dette er en kommentar
+   - a) % Dette er en kommentar %
+   - b) // Dette er en kommentar **riktig**
    - c) /* Dette er en kommentar */ **riktig**
    - d) -- Dette er en kommentar --
 
