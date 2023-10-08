@@ -426,12 +426,9 @@ Du skal lage en nettside der brukere kan registrere sine tider fra en løpekonku
 6. **Forbedret UI**: Legg til CSS for å forbedre utseendet på nettsiden. Pass på at nettsiden er brukervennlig og at det er lett å forstå hvordan man registrerer en tid og hvordan man utfører søk.
 
 Lykke til!
-
-Selvfølgelig! La oss lage en enklere løsning med seks variabler og uten bruk av lister eller objekter:
-
 ---
 
-## Løpekonkurranse Nettside
+## Løpekonkurranse Nettside LØSNING
 
 ### HTML:
 
