@@ -37,16 +37,7 @@
             let selectedFruit = selectElement.value;
 
             // Leser det valgte elementet fra radiobuttons
-            let fargebtns = document.getElementsByName("farge");
-            let selectedColor = "";
-            for (radbtn of fargebtns) {
-                if (radbtn.checked) {
-                    selectedColor = radbtn.value;
-                }
-            }
-            
-                
-            
+            let selectedColor = document.querySelector('input[name="farge"]:checked').value;
 
             // Viser de valgte verdiene
             alert(`Du har valgt ${selectedFruit} fra dropdown og ${selectedColor} fra radiobuttons.`);
