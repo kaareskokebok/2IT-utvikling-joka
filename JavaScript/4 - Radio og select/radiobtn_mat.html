@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Velg favorittmat:</label><br>
+<input type="radio" name="mat" id="radTorsk" value="Torsk">
+<label for="radTorsk">Torsk</label><br>
+<input type="radio" name="mat" id="radTaco" value="Taco">
+<label for="radTaco">Taco</label><br>
+<input type="radio" name="mat" id="radSauehue" value="Sauehue">
+<label for="radSauehue">Sauehue</label> <br>
+<button onclick="spis()">Spis!</button>
+
+<script>
+function spis(){
+    // One-liner for å finne valgt knapp
+    let valgtMat = document.querySelector("input[name='mat']:checked").value;
+    alert(valgtMat)
+    // Sjekk hver knapp
+    if (radTorsk.checked) {
+        alert("Digg med torsk");
+    } 
+    else if (radTaco.checked){
+        alert("Taco el Paco")
+    }else{
+        alert("SAUEHUE!? ER DU GAL!?");
+    }
+}
+
+</script>
+</body>
+</html>
