@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img width="600px"src="https://www.geirangerfjord.no/upload/images/2018_sightseeing/1b.jpg">
+<h1>Velkommen til Geiranderfjorden cruises</h1>
+<label for="lugartype">Velg lugartype:</label><br>
+<select id="lugartype">
+    <option value="smoking">Røyk</option>
+    <option value="non-smoking">Ikke-røyk</option>
+</select><br>
+<!-- Skriv inn antall lugarer: TODO -->
+<label for="antallLugs">Skriv inn ønsket antall lugarer:</label><br>
+<input type="number" id="antallLugs">
+
+<button id="btnBestill">Bestill</button>
+<p id="txtUt"></p>
+<script>
+function bestill(){
+    let pris = 0;
+    let valgtLugar = lugartype.value;
+    let antall = antallLugs.value;
+    // txtUt.textContent = valgtLugar;
+    if (valgtLugar == "smoking"){
+        pris = roykPris * antall;
+    } // TODO: fiks IKKE-røyk, skriv ut prisen.
+    else if (valgtLugar == "non-smoking"){ // eller else
+        pris = ikkeRoykPris * antall;
+    }
+
+    let tekst = `Din bestilling: <hr>
+    Antall lugarer: ${antall}<br>
+    Lugartype: ${valgtLugar}<br>
+    Totalpris: ${pris} kr`
+    txtUt.innerHTML = tekst;
+}
+btnBestill.onclick = bestill;
+// btnBestill.addEventListener("click", bestill);
+let roykPris = 650;
+let ikkeRoykPris = 480;
+</script>
+</body>
+</html>
