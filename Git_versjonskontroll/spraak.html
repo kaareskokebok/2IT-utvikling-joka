@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velge språk</title>
+<title>Languageslol</title>
 </head>
 <body>
-    <h1 id="overskrift">Velkommen til Nannestad</h1>
-    <select id="selSpraak">
-        <option>Velg språk her...</option>
-        <option>Norsk</option>
-        <option>Japansk</option>
-    </select>
-    <p id="txt">Nannestad er en vakker og intim landsby i naturrike omgivelser.
-        Nannestad er kjent for skisport og rikt friluftsliv. Det er mange
-        fiskevann, og Leira er vår elv som renner ut i Øyeren ved Lillestrøm.
-    </p>
-
-    <script>
-
-        function endreSpraak(){
-            let valgtSpraak = selSpraak.value;
-           // Hjelp
-        }
-        
-    selSpraak.addEventListener("change", endreSpraak);
+<h1>dikt</h1>
+<h4>velg språk</h4>
+<select id="lang">
+<option value="No">Norsk</option>
+<option value="Jp">Japansk</option>
+<option value="Ru">Russisk</option>
     
-    </script>
+</select>
+<br><br>
+<button onclick="show()">velg språk</button>
+<p id="txtN">Vi holder livet i en knyttet hånd.Vårt hjerte må bestandig ha det sånn. Det tåler gjerne spott og overlastnår bare det får holde noe fast. En mann, et barn, en drøm skal være vår og evigheten måles ut i år. For i vår gåtefulle, blinde angst blir alle ting erobring eller fangst. Vi bærer skrekken med oss natt og dag, den bleke skrekk for hjertets nederlag.</p>
+<p id="txtJ">私たちは握りしめた手で命を握っています。私たちの心は常にそう感じているはずです。嘲笑や虐待に簡単に耐えることができます それが何かを速く保つことができるときだけ。男も子供も夢も我々のものになる そして永遠は年単位で測られます。私たちの不可解で盲目的な不安の中で すべてのものは征服か捕獲になります。私たちは昼も夜も恐怖を抱えていますが、心の敗北の淡い恐怖。</p>
+<p id="txtR">Мы держим жизнь в сжатых руках. Наше сердце всегда должно чувствовать то же самое. Он легко выдерживает насмешки и оскорбления. когда только он может что-то удержать. Мужчина, ребенок, мечта должна быть нашей a вечность измеряется годами. Ибо в нашей загадочной, слепой тревоге все становится завоеванием или захватом. Мы несем c собой ужас день и ночь, бледный ужас поражения сердца.</p>
 </body>
-</html>
+<script>
+document.getElementById("txtN").style.display = "none"
+document.getElementById("txtJ").style.display = "none"
+document.getElementById("txtR").style.display = "none"
+
+function show(){
+    let selected = document.getElementById("lang").value
+    if (selected === "No"){
+        document.getElementById("txtN").style.display = "block"
+        document.getElementById("txtJ").style.display = "none"
+        document.getElementById("txtR").style.display = "none"
+    }
+    else if (selected === "Jp"){
+        document.getElementById("txtJ").style.display = "block"
+        document.getElementById("txtN").style.display = "none"
+        document.getElementById("txtR").style.display = "none"
+    }
+    else if (selected === "Ru"){
+        document.getElementById("txtR").style.display = "block"
+        document.getElementById("txtJ").style.display = "none"
+        document.getElementById("txtN").style.display = "none"
+    }
+}
+</script>
