@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velge språk</title>
+    <title>språk</title>
 </head>
 <body>
-    <h1 id="overskrift">Velkommen til Nannestad</h1>
-    <select id="selSpraak">
-        <option>Velg språk her...</option>
-        <option>Norsk</option>
-        <option>Japansk</option>
+    <select id="lang">
+        <option value="jap">日本語に訳す</option>
+        <option value="no">oversett til norsk</option>
+        <option value="sp">traducir al español</option>
     </select>
-    <p id="txt">Nannestad er en vakker og intim landsby i naturrike omgivelser.
-        Nannestad er kjent for skisport og rikt friluftsliv. Det er mange
-        fiskevann, og Leira er vår elv som renner ut i Øyeren ved Lillestrøm.
-    </p>
-
-    <script>
-
-        function endreSpraak(){
-            let valgtSpraak = selSpraak.value;
-           // Hjelp
-        }
-        
-    selSpraak.addEventListener("change", endreSpraak);
+    <h1 id="title">jeg elsker noga også</h1>
+    <p id="1no">alle sammen</p>
+    <p id="2no">liker noga</p>
     
+    <script>
+        const langDropdown = document.getElementById("lang");
+        const titleNo = document.getElementById("title");
+        const text1no = document.getElementById("1no");
+        const text2no = document.getElementById("2no");
+
+        langDropdown.addEventListener("change", function () {
+            if (langDropdown.value === "jap") {
+                titleNo.textContent = "私もノガが好きです";
+                text1no.textContent = "みんな";
+                text2no.textContent = "丁寧に好きです";
+            } else if (langDropdown.value === "no") {
+                titleNo.textContent = "jeg elsker noga også";
+                text1no.textContent = "alle sammen";
+                text2no.textContent = "liker noga";
+            } else if (langDropdown.value === "sp") {
+                titleNo.textContent = "también me encanta el noga";
+                text1no.textContent = "todos juntos";
+                text2no.textContent = "gustar mucho";
+            }
+        });
     </script>
 </body>
 </html>
