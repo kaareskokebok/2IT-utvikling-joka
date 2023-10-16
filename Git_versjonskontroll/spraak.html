@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velge språk</title>
+</head>
+<body>
+    <h1 id="overskrift">Velkommen til Nannestad</h1>
+    <select id="selSpraak">
+        <option>Velg språk her...</option>
+        <option>Norsk</option>
+        <option>Japansk</option>
+    </select>
+    <p id="txt">Nannestad er en vakker og intim landsby i naturrike omgivelser.
+        Nannestad er kjent for skisport og rikt friluftsliv. Det er mange
+        fiskevann, og Leira er vår elv som renner ut i Øyeren ved Lillestrøm.
+    </p>
+
+    <script>
+
+        function endreSpraak(){
+            let valgtSpraak = selSpraak.value;
+           // Hjelp
+        }
+        
+    selSpraak.addEventListener("change", endreSpraak);
+    
+    </script>
+</body>
+</html>
