@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brukerregistrering med form</title>
+    <style>
+        body{
+            margin-top: 5%;
+            margin-left:20%;
+            margin-right:20%;
+        }
+    </style>
+</head>
+<body>
+<h1>Registrer ny bruker, og logg deg inn.</h1>
+
+<form id="formBruker">
+    <fieldset>
+        <legend>Lag ny bruker:</legend>
+    <label>Oppgi epost:</label><br>
+    <input id="inpEpost" placeholder="per@per.no" type="email" required><br>
+    <label>Oppgi passord:</label><br>
+    <input id="inpPassord" type="password" required minlength="8" maxlength="12"><br>
+    <input type="submit" value="Registrer deg">
+</fieldset>
+</form>
+
+
+<form id="formLoggInn">
+    <fieldset>
+        <legend>Logg deg inn:</legend>
+    <label>Oppgi epost:</label><br>
+    <input placeholder="per@per.no" type="email" required><br>
+    <label>Oppgi passord:</label><br>
+    <input type="password" required><br>
+    <input type="submit" value="Logg inn">
+</fieldset>
+</form>
+<script>
+function regBruker(){
+    let epost = inpEpost.value;
+    let pw = inpPassord.value;
+    alert(`
+Din epost: ${epost}
+Ditt passord: ${pw}.`);
+}
+
+function loggInn(){
+    let epost = document.querySelector('#formLoggInn input[type="email"]').value;
+    // TODO: Les inn passord, kontroll epost og passord
+    // mot _epost og _pw. Gi feilmelding/tilbakemelding.
+}
+formLoggInn.addEventListener("submit", loggInn);
+formBruker.addEventListener("submit", regBruker);
+
+// Epost og passord som ble registrert
+let _epost = "";  
+let _pw = "";
+</script>
+</body>
+</html>
