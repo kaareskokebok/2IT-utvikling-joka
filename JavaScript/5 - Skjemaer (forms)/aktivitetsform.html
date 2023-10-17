@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin-left:20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Velkommen til Annes Aktivitetspark</h1>
+
+    <form id="formPaamelding">
+        <label>Navn</label><br>
+        <input type="text" required><br>
+        <label>Mobil</label><br>
+        <input type="tel" required minlength="8" maxlength="8"><br>
+        <label>Kjønn</label><br>
+        <input type="radio" name="kjonn" value="mann" required>Mann<br>
+        <input type="radio" name="kjonn" value="kvinne">Kvinne<br>
+        <label>Alder</label><br>
+        <input type="number"><br>
+        <label>Aktivitet</label><br>
+        <select required>
+            <option value="">Velg aktivitet...</option>
+            <option>Klatrepark</option>
+            <option>Ridning</option>
+            <option>Svømming</option>
+            <option>Paragliding</option>
+        </select><br>
+        <input type="submit"><input type="reset">
+    </form>
+
+    <script>
+    function regAktivitet(e){
+        e.preventDefault();  // Unngå at form forsøker å sende data til en ny nettside
+        let tlf = document.querySelector('#formPaamelding input[type="tel"]').value;
+        prompt(`Stemmer telefonnummeret? ${tlf}`);
+    }
+
+    formPaamelding.addEventListener("submit", regAktivitet);
+    </script>
+</body>
+</html>
