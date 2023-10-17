@@ -38,18 +38,31 @@
 </fieldset>
 </form>
 <script>
-function regBruker(){
-    let epost = inpEpost.value;
-    let pw = inpPassord.value;
+function regBruker(event){
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    _epost = inpEpost.value;
+    _pw = inpPassord.value;
     alert(`
-Din epost: ${epost}
-Ditt passord: ${pw}.`);
+Din epost: ${_epost}
+Ditt passord: ${_pw}.`);
 }
 
-function loggInn(){
+function loggInn(event){
+    // Prevent the default form submission behavior
+    event.preventDefault();
     let epost = document.querySelector('#formLoggInn input[type="email"]').value;
+    let pw = document.querySelector('#formLoggInn input[type="password"]').value;
     // TODO: Les inn passord, kontroll epost og passord
     // mot _epost og _pw. Gi feilmelding/tilbakemelding.
+    if(epost == _epost && pw == _pw){
+        alert("Du er logget inn!");
+    }
+    else{
+        alert("Feil epost og/eller passord.");
+    }
+
+
 }
 formLoggInn.addEventListener("submit", loggInn);
 formBruker.addEventListener("submit", regBruker);
