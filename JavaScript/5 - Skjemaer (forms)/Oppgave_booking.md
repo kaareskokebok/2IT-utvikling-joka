@@ -1,6 +1,6 @@
-Kjære elev,
+# Oppgave booking
 
-Vi skal nå utvide en grunnleggende hotellbestillingsnettside ved å legge til mer funksjonalitet og stil. Følg instruksjonene nedenfor nøye.
+Vi skal nå utvide en grunnleggende hotellbestillingsnettside ved å legge til mer funksjonalitet og stil. Følg instruksjonene nedenfor nøye. Ta utgangspunkt i `hotell_booking.html`.
 
 ### Trinn 1: Utvide HTML-innholdet
 
