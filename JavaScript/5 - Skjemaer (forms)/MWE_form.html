@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWE form</title>
+</head>
+<body>
+   <!--MWE = Minimal Working Example-->
+   <form id="skjema">
+    <label>Oppgi bosted</label><br>
+    <input id="inpBosted" type="text"><br>
+    <input type="submit" value="Registrer">
+   </form> 
+
+   <script>
+
+    function regBosted(e){
+        e.preventDefault();  // Unngå at form sender til en annen nettside
+        //let bosted = inpBosted.value;
+        let bosted = document.querySelector('#skjema input[type="text"]').value;
+        alert("Du bor på " + bosted);
+    }
+    skjema.onsubmit = regBosted;
+    // skjema.addEventListener("submit", regBosted);
+   </script>
+</body>
+</html>

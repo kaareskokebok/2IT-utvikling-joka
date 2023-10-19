@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotell booking</title>
+    <style>
+        body{
+            margin-left: 20%;
+        }
+    </style>
+</head>
+<body>
+   <h3>Prisliste</h3>
+   <ul>
+    <li>Standard: 1790,- per natt</li>
+    <li>Deluxe: 2890,- per natt</li>
+    <li>President-Suite: 12 390,- per natt</li>
+   </ul>
+
+   <form id="skjema">
+    <label>Fra dato:</label><br>
+    <input id="inpDatoFra" type="date"><br>
+    <label>Til dato:</label><br>
+    <input id="inpDatoTil" type="date"><br>
+    <label>Velg romtype:</label>
+    <input type="radio" name="romtype" value="standard">Standard<br>
+    <input type="radio" name="romtype" value="deluxe">Deluxe<br>
+    <input type="radio" name="romtype" value="president">President-Suite<br>
+    <input type="submit" value="Book oppholdet">
+   </form> 
+
+   <script>
+    function beregnDager() {
+    // Hent datoene fra input-feltene
+    let datoFra = document.getElementById('inpDatoFra').value;
+    let datoTil = document.getElementById('inpDatoTil').value;
+
+    // Konverter strengene til datoobjekter
+    let datoFraObj = new Date(datoFra);
+    let datoTilObj = new Date(datoTil);
+
+    // Beregn forskjellen i millisekunder
+    let forskjellIMilliSekunder = datoTilObj - datoFraObj;
+    
+    // Konverter forskjellen til dager
+    let antallDager = forskjellIMilliSekunder / (1000 * 3600 * 24);
+
+    // Returner eller vis resultatet
+    return antallDager;
+
+    }   
+    function book(e){
+        e.preventDefault();  // Unngå at form sender til en annen nettside
+
+        let antallDager = beregnDager();
+        // alert(antallDager);
+   
+    }
+    skjema.onsubmit = book;
+
+   </script>
+</body>
+</html>
