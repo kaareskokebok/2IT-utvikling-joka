@@ -1,4 +1,4 @@
-Dette prosjektet vil hjelpe elevene med å forstå grunnleggende webutvikling ved å lage en enkel bestillingsside for togbilletter. Vi vil bryte ned prosessen i trinnvise instruksjoner. Mot slutten vil vi gi utfordringer som elevene skal løse på egen hånd for å styrke deres forståelse og problemløsningsevner.
+# Togtur stegvis utvikling
 
 **Steg 1: Opprett HTML-struktur**
 
