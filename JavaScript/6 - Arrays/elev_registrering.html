@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elev-registrering med array</title>
+</head>
+<body>
+    <h1>Elev-registrering</h1>
+    <label for="inpNavn">Skriv inn navn:</label>
+    <input id="inpNavn">
+    <button onclick="leggTilElev()">Legg til elev</button>
+    <button onclick="visAlleElever()">Vis alle elever</button>
+    <button onclick="slettSisteElev()">Slett siste elev</button>
+    <button onclick="sokElev()">Søk etter elev</button>
+<p id="txtUt"></p>
+    <script>
+        
+        function leggTilElev(){
+            // TODO
+        }
+        function visAlleElever(){
+            let txt = `<h4>Elev-oversikt</h4>`;
+            txt += `<p>${elever}</p>`;
+            txtUt.innerHTML = txt;
+        }
+        function slettSisteElev(){
+            // TODO
+        }
+        function sokElev(){
+            // TODO
+        }
+
+        let elever = ["per", "arne", "sara"];
+    </script>
+</body>
+</html>
