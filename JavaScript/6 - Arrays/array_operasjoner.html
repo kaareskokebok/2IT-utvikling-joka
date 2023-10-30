@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array 1</title>
+</head>
+<body style="margin-left: 150px;">
+    
+    <script>
+        let elev1 = "jens";
+        let elev2 = "per" ;
+        let elev3 = "kari";
+        let elev4 = "siri";
+
+        // Lage et array med 4 elever
+        let elever = ["jens", "per", "kari", "siri"];
+
+        // Skriv ut hele arrayet
+        document.write(elever);
+        document.write("<br>");  // Linjeskift
+        
+        // Skriv ut per
+        document.write(elever[1]);
+        document.write("<br>");  // Linjeskift
+
+        // Skriv ut siri
+        document.write(elever[3]);
+        document.write("<br>");  // Linjeskift
+
+        // Skriv ut ugyldig indeks
+        document.write(elever[5]);
+        document.write("<br>");  // Linjeskift
+        // Endre verdier
+        // ["jens", "per", "kari", "siri"]
+        // Endre jens til arne
+        elever[0] = "arne";
+        // Hva er resultatet etter denne?
+        elever[3] = elever[1];
+        // ["arne", "per", "kari", "per"]
+
+        // Legge til nye verdier
+        // Legg til ali i slutten av arrayet
+        elever.push("ali");
+        // Legg til aliah
+        elever.push("aliah");
+        document.write(elever);
+        document.write("<br>");  // Linjeskift
+
+        // Slette verdier
+        // Slette de tre siste
+        elever.pop();
+        elever.pop();
+        elever.pop();
+        document.write(elever);
+        document.write("<br>");  // Linjeskift
+
+        // Søke i array
+        document.write(elever.indexOf("per")); // 1
+        document.write("<br>");  // Linjeskift
+        document.write(elever.indexOf("noah innstrand"));  // -1
+        document.write("<br>");  // Linjeskift
+
+        let sokenavn = "paløskødnf";
+        if (elever.indexOf(sokenavn) > -1){
+            document.write(sokenavn + " finnes");
+        }else{
+            document.write(sokenavn + " finnes ikke");
+        }
+        
+    </script>
+
+</body>
+</html>
