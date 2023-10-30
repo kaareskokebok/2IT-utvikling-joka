@@ -15,13 +15,16 @@
     <button onclick="sokElev()">Søk etter elev</button>
 <p id="txtUt"></p>
     <script>
-        
+
         function leggTilElev(){
             // TODO
         }
         function visAlleElever(){
-            let txt = `<h4>Elev-oversikt</h4>`;
-            txt += `<p>${elever}</p>`;
+            let txt = `<h4>Elev-oversikt</h4> <hr>`;
+            for (let i=0; i<elever.length; i++){
+                txt += `${elever[i]}<br>`;
+            }
+            
             txtUt.innerHTML = txt;
         }
         function slettSisteElev(){
