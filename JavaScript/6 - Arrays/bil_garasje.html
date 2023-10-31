@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garasje med biler</title>
+</head>
+<body> 
+<!-- Lag en nettside der brukeren kan legge til biler, 
+slette en spesifikk bil, vise oversikt over alle bilene og
+søke etter en bil. 
+Utfordring: Lag nettsiden selv.
+Ellers, skriv begynnelsen sammen med meg.-->
+
+<h1>Georgs Garasje</h1>
+<p>Georg har mange biler i sin garasje.</p>
+<label for="inpBil">Skriv bilmerke:</label><br>
+<input id="inpBil">
+<button onclick="leggTilBil()">Legg til bil</button>
+<button onclick="slettBil()">Slett bil</button>
+<button onclick="visBiler()">Vis oversikt</button>
+<button onclick="sokBil()">Søk etter bil</button>
+<p id="txtUt"></p>
+
+<script>
+    function leggTilBil(){
+        // Leser inn bilmerke fra inpBil og legger det til
+        // i arrayet biler
+        let bil = inpBil.value;
+        biler.push(bil);
+    }
+    function slettBil(){
+        // Leser inn bilmerke fra inpBil, finner indeks
+        // ved hjelp av biler.indexOf, og sletter bilen
+        // ved hjelp av biler.splice.
+        // Ekstra: Gi feilmelding dersom bilen ikke finnes.
+    }
+    function sokBil(){
+        // Leser inn bilmerke fra inpBil, finner indeks
+        // ved hjelp av biler.indexOf, bruker at indexOf
+        // gir -1 dersom bilen ikke finnes til å gi tilbakemelding.
+    }
+    function visBiler(){
+        let txt = "Oversikt over biler <hr>";
+        for(let i=0; i<biler.length; i++){
+            txt += biler[i] + "<br>";
+        }
+        txtUt.innerHTML = txt;
+    }
+    let biler = ["saab", "volvo", "bmw", "audi"];
+</script>
+</body>
+</html>

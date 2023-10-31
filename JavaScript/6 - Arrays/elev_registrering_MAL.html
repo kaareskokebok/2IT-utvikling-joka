@@ -18,11 +18,6 @@
 
         function leggTilElev(){
             // TODO
-            // Maks 10 elever tillatt i klassen
-            // Tips: bruk elever.length
-            let navn = inpNavn.value;
-            elever.push(navn);
-            visAlleElever();
         }
         function visAlleElever(){
             let txt = `<h4>Elev-oversikt</h4> <hr>`;
@@ -34,17 +29,9 @@
         }
         function slettSisteElev(){
             // TODO
-            elever.pop();
-            visAlleElever();
         }
         function sokElev(){
             // TODO
-            let navn = inpNavn.value;
-            if (elever.indexOf(navn) === -1){
-                txtUt.textContent = `Eleven ${navn} finnes ikke`;
-            }else{
-                txtUt.textContent = `Eleven ${navn} går i klassen`;
-            }
         }
 
         let elever = ["per", "arne", "sara"];

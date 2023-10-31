@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txtUt"></p>
+    
+    <script>
+let biler = ["saab", "volvo", "mclaren", "porsche", "hyundai"];
+// let utskrift = biler[0] + "<br>";
+// utskrift += biler[1] + "<br>";
+// utskrift += biler[2] + "<br>";
+// //...
+// txtUt.innerHTML = utskrift;
+// alert(biler.length);  // 5
+
+let utskrift = "";
+for (let i=0; i < biler.length; i++){
+    utskrift += biler[i] + "<br>";
+}
+txtUt.innerHTML = utskrift;
+
+// Søke og slette
+let sokebil = "volvo";
+let indeks = biler.indexOf(sokebil);
+if (indeks == -1){
+    txtUt.textContent = `Bilen ${sokebil} finnes ikke.`;
+}else{
+    // Bilen finnes og skal nå slettes
+    biler.splice(indeks, 1);
+    txtUt.textContent = biler;
+}
+/*
+Lag en nettside der brukeren kan legge til biler, 
+slette en spesifikk bil, vise oversikt over alle bilene og
+søke etter en bil.
+*/
+    </script>
+</body>
+</html>

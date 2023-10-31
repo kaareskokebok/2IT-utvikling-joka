@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Python: for i in range(10):
+        // i++ betyr i = i + 1 eller i += 1
+        for (let i=0; i<10; i++) {
+            document.write(i + " ");
+        }
+        // Lag ny løkke som skriver ut tallene 
+        // 10, 11, 12, 13, ..., 120
+        for (let i=10; i<121; i++) {
+            document.write(i + " ");
+        }
+        document.write("<br>");
+
+        // Utfordringer:
+        // 10, 15, 20, 25, ..., 105, 110
+        for (let i=10; i<111; i+=5) {
+            document.write(i + " ");
+        }
+        document.write("<br><br>")
+        // 100, 93, 86, 79, ..., 30
+        for(let j=100; j>=30; j-=7){
+            if (j == 30){
+                document.write(j); 
+            }else{
+                document.write(j + ", ");
+            }
+        }
+
+    </script>
+</body>
+</html>
