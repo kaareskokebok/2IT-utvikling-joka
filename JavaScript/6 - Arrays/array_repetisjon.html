@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let bokstaver = ["a", "b", "c", "d", "e"];
+        bokstaver.length;  // 5
+        bokstaver[1];  // b
+        bokstaver[0];  // a
+        bokstaver[5];  // undefined
+        bokstaver[bokstaver.length - 1];  // e
+        bokstaver[4];  // e
+
+        bokstaver.pop();  // e blir fjernet
+        bokstaver.push("k");  // k legges til i slutten
+        bokstaver.splice(2, 1);  // sletter bare c
+        bokstaver.indexOf("b");  // 1
+        bokstaver.indexOf("y");  // -1
+    </script>
+</body>
+</html>

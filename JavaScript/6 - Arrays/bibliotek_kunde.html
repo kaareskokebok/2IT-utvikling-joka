@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotek - bokutlån</title>
+    <style>
+        #inpTittel{
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Velkommen til Bernts Bibliotek.</h1>
+    <p>Skriv inn en tittel på en bok du vil låne eller levere.
+        Du kan også søke på om en bok er tilgjengelig eller ikke, eller om
+        boka ikke finnes i det hele tatt. Få oversikt over bøker; utlånte
+        og tilgjengelig.
+    </p>
+    <label for="inpTittel">Oppgi bokens tittel:</label><br>
+    <input id="inpTittel"><br>
+    <button onclick="lanBok()">Lån bok</button>
+    <button onclick="leverBok()">Lever bok</button>
+    <button onclick="sokBok()">Søk etter bok</button>
+    <button onclick="visOversikt()">Vis en oversikt</button>
+    <p id="txtUt"></p>
+
+    <script>
+
+function lanBok(){
+    // Lese inn bok fra user
+    let bok = inpTittel.value;
+    // Sjekke om boka finnes
+    if (boktitler.indexOf(bok) != -1){
+        // Boka finnes, sjekk om tilgjengelig
+        if (utlante.indexOf(bok) == -1 ){
+            // Putte boka i utlante hvis ja
+            utlante.push(bok);
+            txtUt.textContent = "God fornøyelse med boka";
+        }else{
+            txtUt.textContent = "Boka er dessverre utlånt.";
+        }
+
+    }else{
+        // Boka finnes ikke
+        txtUt.textContent = "Boka finnes ikke";
+    }
+
+}
+
+function leverBok(){
+    // Sjekk at boken finnes i utlante, hvis nei gi feilmelding
+    // Hvis ja, la boken bli levert.
+    // Oppdater utlante-arrayet.
+    // Gi tilbakemelding
+    // TODO ...
+}
+
+function sokBok(){
+    // Søk først om boken finnes i boktitler
+    // Finn deretter ut om boken er tilgjengelig
+    // Gi tilbakemelding
+    // TODO ...
+}
+
+function visOversikt(){
+    // Vis alle bøkene til biblioteket, med status på hver bok
+    // Tilgjengelig eller Utlånt
+    // TODO ...
+}
+
+let boktitler = ["Gutten", "Havet", "Stjernene", "Hagen", "Tid", "Glasset", "Vind", "Regn", "Elva", "Skogen"];
+let utlante = ["Havet", "Tid", "Vind"];
+// Bøker som ikke er i utlante-arrayet, er tilgjengelig for utlån
+    </script>
+
+</body>
+</html>
