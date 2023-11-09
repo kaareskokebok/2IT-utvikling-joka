@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--### Oppgave 1: Velg Ditt Kjæledyr
+Lag en nettside med et `select` element der brukeren kan velge mellom hund, 
+katt og fisk som sitt favorittkjæledyr. 
+Når brukeren velger et kjæledyr, vis et tilsvarende bilde 
+av kjæledyret ved hjelp av JavaScript.-->
+<h1>Ditt favorittkjæledyr</h1>
+
+<select id="selectDyr">
+    <option value="">Velg dyr her...</option>
+    <option value="https://dyrevern.no/content/uploads/2019/12/Katt_teppe.jpg">Katt</option>
+    <option value="https://www.cbs42.com/wp-content/uploads/sites/81/2022/06/21b34b8003bd4cd8a7602c40fe261bbb.jpg">Pytonslange</option>
+    <option value="https://media.wwf.no/assets/article_images/Dyr/_1600x1067_crop_center-center_none/Stumpneseape_WW1125857.jpg">Ape</option>
+</select>
+<hr>
+<img width="30%" id="bildeDyr">
+
+<script>
+function visBilde(){
+    let valgtDyrURL = selectDyr.value;
+    if (valgtDyrURL == ""){
+        alert("Du må velge et dyr!");
+    }else{
+        bildeDyr.src = valgtDyrURL; 
+    }
+}
+
+selectDyr.addEventListener("change", visBilde);
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frukter</title>
+</head>
+<body>
+    <h1>Frukter</h1>
+    <input id="inpFrukt">
+    <button onclick="leggTilFrukt()">Legg til frukt</button>
+    <button onclick="visFrukter()">Vis frukter</button>
+    <button onclick="fjernSisteFrukt()">Fjern siste frukt</button>
+    <button onclick="fjernFrukt()">Fjern valgt frukt</button>
+    <p id="txtUt"></p>
+    <script>
+
+        function fjernFrukt(){
+            // 1. Les inn frukt
+            let frukt = inpFrukt.value;
+            // 2. Finn indeksen til frukten
+            let indeks = frukter.indexOf(frukt);
+            if (indeks >= 0){
+                // 3. Slett 1 element på plass indeks
+            frukter.splice(indeks, 1);
+            }
+        }
+        
+        function leggTilFrukt(){
+            // 1. Les inn frukt fra input-felt
+            let frukt = inpFrukt.value;
+            // 2. Legg til frukt i array
+            frukter.push(frukt);
+        }
+        function visFrukter(){
+            txtUt.textContent = frukter;
+        }
+        function fjernSisteFrukt(){
+            frukter.pop();
+        }
+        let frukter = ["ananas", "eple", "banan"];
+    </script>
+</body>
+</html>

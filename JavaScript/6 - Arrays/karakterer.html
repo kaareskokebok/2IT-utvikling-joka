@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karakterer</title>
+    <style>
+        body{
+            margin-left: 20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mine karakterer</h1>
+    <button onclick="visOversikt()">Vis oversikt</button>
+    <button onclick="giKarakterPoeng()">Vis karakterpoeng</button>
+    <button onclick="giSnitt()">Vis gjennomsnittskarakter</button>
+    <button onclick="hoyesteKar()">Vis høyeste karakter</button>
+    <button onclick="harBestatt()">Har jeg bestått opplæringen?</button>
+    <p id="txtUt"></p>
+
+    <script>
+        function gjSnitt(){
+            // TODO: regn ut og skriv ut gjsnittskarakteren
+        }
+        function hoyesteKar(){
+            // TODO: finn høyeste karakter
+        }
+        function harBestatt(){
+            // TODO: undersøk om eleven har bestått opplæringen
+            // Tips: Eleven består bare dersom det ikke er noen 1-ere
+        }
+        function giKarakterPoeng(){
+            // Legg sammen alle karakterene
+            // Skriv ut summen
+            let summ = 0;
+            // Løkke her, øk summ
+            for(let i=0; i<karakterer.length; i++){
+                summ += karakterer[i];
+            }
+            // Skriv ut summ
+            txtUt.textContent = `Karakterpoeng: ${summ}`;
+        }
+        function visOversikt(){
+            let tekst = "<h3>Mine karakterer</h3><hr>";
+            for(let i=0; i<karakterer.length; i++){
+                tekst += karakterer[i] + "<br>";
+            }
+            txtUt.innerHTML = tekst;
+        }
+        let karakterer = [3, 5, 4, 2, 6, 1, 3, 1];
+
+    </script>
+</body>
+</html>
