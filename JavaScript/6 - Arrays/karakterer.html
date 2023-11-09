@@ -22,13 +22,43 @@
     <script>
         function gjSnitt(){
             // TODO: regn ut og skriv ut gjsnittskarakteren
+            let summ = 0;
+            // Løkke her, øk summ
+            for(let i=0; i<karakterer.length; i++){
+                summ += karakterer[i];
+            }
+            let gjsnitt = summ / karakterer.length;
+            txtUt.textContent = `Snittkarakter: ${gjsnitt}`;
         }
         function hoyesteKar(){
             // TODO: finn høyeste karakter
+            // Anta at den første kar. er høyest
+            let hoyest = karakter[0];
+            // Sammenlign med andre karakterer
+            for(let i=1; i<karakterer.length; i++){
+                // Hvis karakterer[i] er høyere...
+                if (karakterer[i] > hoyest){
+                    hoyest = karakterer[i];
+                }
+            }
+            txtUt.textContent = `Beste karakter: ${hoyest}`;
+            // const hoyest = Math.max(...karakterer)
+
         }
         function harBestatt(){
             // TODO: undersøk om eleven har bestått opplæringen
             // Tips: Eleven består bare dersom det ikke er noen 1-ere
+            let elevHarBestatt = true;
+            for(let i=0; i<karakterer.length; i++){
+                if (karakterer[i] == 1){
+                    elevHarBestatt = false;
+                }
+            }
+            if (elevHarBestatt){
+                txtUt.textContent = "Bestått";
+            }else{
+                txtUt.textContent = "Ikke bestått";
+            }
         }
         function giKarakterPoeng(){
             // Legg sammen alle karakterene
