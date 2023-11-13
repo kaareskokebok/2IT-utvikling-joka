@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mitt bildegalleri: Naturens verden</h1>
+    <img id="bilde" src="images_array/fugl.jpg">
+    <button id="btnNeste">Neste</button>
+
+    <script>
+        /* TODO:
+        1. Fiks slik at neste starter på nytt etter siste bilde.
+        2. Lag forrige-knapp og forrige-funksjon.
+        3. Lag automatisk bildekarusell hvor hvert bilde vises i 2 sek.
+           Tips: Undersøk setInterval i javascript.
+        */
+        function neste(){
+            currentIndex++;
+            let mappe = "images_array/";
+            let bildefil = mappe + bilderfiler[currentIndex] + ".jpg";
+            bilde.src = bildefil;
+        }
+        // Alle bilder har filformat jpg
+        let bilderfiler = ["fugl", "fyrtårn", "ulv"];
+        let currentIndex = 0;
+
+        btnNeste.addEventListener("click", neste);
+    </script>
+</body>
+</html>
