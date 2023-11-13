@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildegalleri natur</title>
+    <style>
+        img{
+            width: 200px;
+        }
+        body{
+            margin-left:20%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mitt bildegalleri: Naturens verden</h1>
+    <img id="bilde" src="images/bilde1.jpg">
+    <button id="btnNeste">Neste</button>
+
+    <script>
+        function neste(){
+            bildenr++;
+            if(bildenr > 3){
+                bildenr = 1;
+            }
+            bilde.src = `images/bilde${bildenr}.jpg`;
+        }
+        // TODO: Lag forrige-knapp, og lag forrige-funksjon.
+        // TIPS: Meget lik neste-funksjonen.
+        btnNeste.addEventListener("click", neste);
+        // btnNeste.onclick = neste;
+        let bildenr = 1;
+    </script>
+</body>
+</html>
