@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txtUt"></p>
+    <button onclick="stoppTimer()">Stopp timer</button>
+    <script>
+        function stoppTimer(){
+            clearInterval(timer);
+        }
+        function visTekst1(){
+            txtUt.innerHTML += "Etter 2 sek vises denne en gang.<br>";
+            
+        }
+
+        function visTekst2(){
+            txtUt.innerHTML += "Hvert 0,5 sekund...<br>";
+        }
+        function visTekst3(){
+            txtUt.innerHTML += "Etter 4 sek en gang.";
+        }
+        setTimeout(visTekst1, 2000);  // 2000 ms = 2 sek
+        setTimeout(visTekst3, 4000);  
+
+        let timer = setInterval(visTekst2, 500);  // 500 ms = 0,5 sek
+    </script>
+</body>
+</html>

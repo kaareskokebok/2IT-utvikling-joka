@@ -5,34 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img{
-            width: 25%;
+        body{
+            margin-left:25%
         }
+        img{
+            height:200px;
+        }
+        #btnStopp{
+            display:none;
+        }
+        /* figure{
+            text-align: center;
+        } */
     </style>
 </head>
 <body>
     <h1>Mitt bildegalleri: Naturens verden</h1>
-    <img id="bilde" src="images_array/fugl.jpg">
+    <figure>
+        <img id="bilde" src="images_array/fugl.jpg">
+        <figcaption id="bildetekst">En søt fugl.</figcaption>
+    </figure>
+    <br>
     <button id="btnNeste">Neste</button>
+    <button id="btnForrige">Forrige</button>
+    <button id="btnStart" onclick="karusellStart()">Start karusell</button>
+    <button id="btnStopp" onclick="karusellStopp()">Stopp karusell</button>
 
     <script>
         /* TODO:
         1. Fiks slik at neste starter på nytt etter siste bilde.
         2. Lag forrige-knapp og forrige-funksjon.
-        3. Lag automatisk bildekarusell hvor hvert bilde vises i 2 sek.
-           Tips: Undersøk setInterval i javascript.
+        3. Legg til bildetekst under hvert bilde.
+           Tips: Legg bildetekstene i et array. Bruk elementene figure,
+           img og figcaption. img og figcaption ligger inni figure.
+        Ekstra:
+        4. Lag automatisk bildekarusell hvor hvert bilde vises i 2 sek.
+           Tips: Undersøk setInterval i javascript. Bakgrunnsmusikk spilles
+           av når karusellen kjører. Karusellen skal kunne stoppes, da
+           stopper også musikken.
         */
+
+       function karusellStart(){
+        // Kan nyte hvert bilde i 2 sek
+        timer = setInterval(neste, 2000);
+
+        // Skru av start-knapp
+        btnStart.disabled = true;
+        // Vis stopp-knapp
+        btnStopp.style.display = "inline";
+        // Start musikk
+        bgmusikk.play();
+       }
+       function karusellStopp(){
+        // Stopp timer
+        clearInterval(timer);
+        // Skru på start-knapp
+        btnStart.disabled = false;
+        // Stopp musikk
+        bgmusikk.pause();
+       }
+
         function neste(){
             currentIndex++;
+            if (currentIndex >= bilderfiler.length){
+                currentIndex = 0;
+            }
             let mappe = "images_array/";
             let bildefil = mappe + bilderfiler[currentIndex] + ".jpg";
             bilde.src = bildefil;
+            bildetekst.textContent = bildetekster[currentIndex];
+        }
+        function forrige(){
+            currentIndex--;
+            if (currentIndex < 0){
+                currentIndex = bilderfiler.length - 1;
+            }
+            let mappe = "images_array/";
+            let bildefil = mappe + bilderfiler[currentIndex] + ".jpg";
+            bilde.src = bildefil;
+            bildetekst.textContent = bildetekster[currentIndex];
         }
         // Alle bilder har filformat jpg
         let bilderfiler = ["fugl", "fyrtårn", "ulv"];
+        let bildetekster = ["En søt fugl.", "Et fyrtårn ved havet.", "En skummel ulv."];
         let currentIndex = 0;
 
         btnNeste.addEventListener("click", neste);
+        btnForrige.addEventListener("click", forrige);
+
+        let bgmusikk = new Audio("bgmusic.mp3");
+
+        let timer;
+        // audio.play()
     </script>
 </body>
 </html>
