@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+            margin-left: 20%;
+        }
+
+        #boks{
+            position:absolute;
+            background-color: red;
+            width: 250px;
+            height: 250px;
+            left:0px;
+            top:0px;
+            transition: 3s;
+        }
+        
+        #boks:hover{
+            top:500px;
+            transform: scale(2) rotateZ(270deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="boks"></div>
+</body>
+</html>
