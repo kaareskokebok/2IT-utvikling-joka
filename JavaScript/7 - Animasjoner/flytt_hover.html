@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS basic anim hover</title>
+    <style>
+        body{
+            margin-left:20%;
+            margin-top:10%;
+            position: relative;
+        }
+        #boks{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            left: 0px;
+            transition: 1s;
+        }
+        #boksGoal{
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background-color: brown;
+            color: whitesmoke;
+            left: 475px;
+        }
+        #boks:hover{
+            left: 400px;
+            transform: scale(0.5) rotateZ(720deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="boks"></div>
+    <div id="boksGoal">Mål</div>
+</body>
+</html>
