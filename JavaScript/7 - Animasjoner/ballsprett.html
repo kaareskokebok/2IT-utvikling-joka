@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprettende Ball</title>
+    <style>
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top:400px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+        0%{
+            /* animation-timing-function: ease-out; */
+            top: 400px;
+            transform: scaleY(1); /* Flater ut ballen */
+        }
+        3%{
+            transform: scaleY(0.5);
+            top:412px;
+        }
+        6%{
+            transform: scaleY(1);
+            top:400px;
+            animation-timing-function: ease-out;
+        }
+       
+
+        50% {
+            animation-timing-function: ease-in;
+            top: 50px;
+        }
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>

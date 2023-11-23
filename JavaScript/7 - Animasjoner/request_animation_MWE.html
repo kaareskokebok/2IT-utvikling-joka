@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kvadrat Animasjon</title>
+    <style>
+        #kvadrat {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+        }
+
+        @keyframes framOgTilbake {
+            50%{
+                left: calc(100% - 50px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="kvadrat" onclick="startAnim()"></div>
+
+<script>
+    function startAnim(){
+        if(anim){
+            kvadrat.style.animation = "";
+        }else{
+           kvadrat.style.animation = "framOgTilbake 2s linear"; 
+        }
+        anim = !anim;
+    }
+    function stoppAnim(){
+
+    }
+    let anim = false;
+    // var kvadrat = document.getElementById('kvadrat');
+    // var pos = 0;
+    // var retning = 2;
+
+    // function animasjon() {
+    //     // Oppdater posisjonen til kvadratet
+    //     pos += retning;
+        
+    //     // Sjekk for å snu bevegelsen hvis kvadratet når kanten
+    //     if (pos <= 0 || pos >= window.innerWidth - 50) {
+    //         retning *= -1;
+    //     }
+
+    //     // Oppdater kvadratets 'left' stil for å flytte den
+    //     kvadrat.style.left = pos + 'px';
+
+    //     // Kall på animasjon funksjonen igjen for neste frame
+    //     requestAnimationFrame(animasjon);
+    // }
+
+    // // Start animasjonen
+    // animasjon();
+</script>
+
+</body>
+</html>

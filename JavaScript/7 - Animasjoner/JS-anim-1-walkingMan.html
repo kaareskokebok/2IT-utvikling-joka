@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking man</title>
+    <style>
+#mann{
+    position: absolute;
+    transform: rotateY(180deg);
+    left: 0px;
+}
+    </style>
+</head>
+<body>
+    <img id="mann" src="walking_man.gif">
+
+    <script>
+
+    function handleKeypress(event) {
+        if (event.key === 'd'){
+            pos_left += 10;
+            mann.style.left = pos_left + "px";
+        }
+        // TODO: legg til kode for å flytte figuren mot venstre
+        // når du trykker på a
+    }
+
+    let pos_left = 0;
+    // Legg til event listener for tastetrykk på hele dokumentet
+    document.addEventListener('keydown', handleKeypress);
+    </script>
+</body>
+</html>
