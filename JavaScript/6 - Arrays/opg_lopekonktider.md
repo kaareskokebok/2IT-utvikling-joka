@@ -123,6 +123,18 @@ Test siden grundig og rett eventuelle feil.
 ### Steg 12: Tilpasninger og Forbedringer
 Til slutt, gjør tilpasninger og forbedringer etter behov. Utforsk muligheten for å legge til flere funksjoner som for eksempel sortering av tider.
 
+### Ekstra steg 1: Sortering av Resultater
+Oppgave: Utvid `visOversikt` funksjonen til å sortere deltakerne etter løpetid, fra kortest til lengst.
+
+- Elevene må lære hvordan man sorterer et array basert på tilknyttede verdier i et annet array. 
+- Introduser en funksjon som kan sortere både `deltakere` og `lopetider` arrays samtidig, slik at navnene og tidene fortsatt korresponderer med hverandre etter sorteringen.
+
+### Ekstra steg 2: Lagring av Data i Lokal Lagring
+Oppgave: Lagre deltakernes data i nettleserens lokal lagring, og last inn disse dataene når nettsiden lastes.
+
+- Dette vil introdusere elevene for konseptet med web lagring.
+- De må skrive kode for å lagre deltakernes navn og tider i `localStorage` og hente disse dataene når siden lastes, slik at informasjonen ikke går tapt selv om siden blir oppfrisket.
+
 ---
 Lykke til med utviklingen! 
 Husk at programmering handler om å eksperimentere og lære gjennom praksis.
