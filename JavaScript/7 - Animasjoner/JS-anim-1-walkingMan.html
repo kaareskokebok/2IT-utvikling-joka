@@ -5,25 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Walking man</title>
     <style>
+
+        #gulv{
+            width: 100%;
+            height: 8px;
+            background-color: brown;
+            position: absolute;
+            top: 400px;
+        }
 #mann{
     position: absolute;
     transform: rotateY(180deg);
     left: 0px;
+    top:200px;
+    height: 200px;
+}
+@keyframes hopp {
+    50%{
+        top:150px;
+    }
 }
     </style>
 </head>
 <body>
     <img id="mann" src="walking_man.gif">
-
+    <div id="gulv"></div>
     <script>
 
     function handleKeypress(event) {
         if (event.key === 'd'){
             pos_left += 10;
-            mann.style.left = pos_left + "px";
+            //mann.style.transform = "rotateY(180deg)";
         }
         // TODO: legg til kode for å flytte figuren mot venstre
         // når du trykker på a
+        if (event.key === 'a'){
+            pos_left -= 10;
+            //mann.style.transform = "rotateY(0deg)";
+        }
+        if(event.key === ' '){  // SPACE trykket
+            // Fjern først animasjonen
+            mann.style.animation = 'none';
+            // "Reflow" trikset for å restarte animasjonen
+            mann.offsetWidth;
+            // Kjør hopp-animasjonen!
+            mann.style.animation = "hopp 1s";
+        }
+        mann.style.left = pos_left + "px";
     }
 
     let pos_left = 0;
