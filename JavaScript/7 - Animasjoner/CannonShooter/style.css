@@ -3,6 +3,17 @@
     position: absolute;
     top:400px;
     left: 0px;
+    z-index: 1;
+}
+#kule{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 440px;
+    left: 250px;
+    background-color: brown;
+    z-index: 0;
 }
 #skytBtn{
     margin-left: 50%;
