@@ -1,0 +1,11 @@
+#imgCannon{
+    width: 300px;
+    position: absolute;
+    top:400px;
+    left: 0px;
+}
+#skytBtn{
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: scale(3);
+}
