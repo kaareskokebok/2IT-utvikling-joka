@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-anim scale</title>
+    <style>
+        #ball{
+            background-color: blueviolet;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            /* Lager ball */
+            border-radius: 50%;  
+        }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+
+    <script>
+        function sjekkKollisjoner(){
+            // Sjekk høyre vegg. window.innerWidth
+            if (posX > window.innerWidth){
+                // Snu fartsretningen
+                fartX = -fartX;
+            } // TODO: sjekk kollisjon venstre vegg
+            // Tips: Hvis x-posisjon er mindre enn 0, 
+            // snu fartsretningen.
+            else if (...){
+
+            }
+
+        }
+        function animerBall(){
+            // Regn ut ny posisjon
+            posX += fartX;
+            // Oppdater visningen av ballen
+            ball.style.left = posX + "px";
+            // Sjekk kollisjoner
+            sjekkKollisjoner();
+            // Kjør funksjonen på nytt når bildet på nettsiden er oppdatert
+            requestAnimationFrame(animerBall);
+        }
+let posX = 0;
+let fartX = 3;  
+// Start animasjon
+animerBall();
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-anim scale</title>
+    <style>
+        #rekt{
+            background-color: blueviolet;
+            width: 25px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="rekt"></div>
+
+    <script>
+        function larger(){
+            size += 0.2;
+            rekt.style.transform = `scale(${size})`;
+        }
+        
+        let size = 1;
+        
+        // "scale(" + size + ")"
+        // Kjører larger-funksjonen hver 1000 ms (1 sek.)
+        setInterval(larger, 25);  // 1000 / 25 = 40 bilder per sek.
+        
+    </script>
+</body>
+</html>
