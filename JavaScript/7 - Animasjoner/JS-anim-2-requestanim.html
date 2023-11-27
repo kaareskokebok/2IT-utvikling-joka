@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking man</title>
+    <style>
+        /* Styling for bakkeelementet */
+        #gulv {
+            width: 100%;
+            height: 8px;
+            background-color: brown;
+            position: absolute;
+            top: 400px;
+        }
+        /* Styling for figur-elementet */
+        #mann {
+            position: absolute;
+            transform: rotateY(180deg);
+            left: 0px;
+            top: 200px;
+            height: 200px;
+        }
+        /* Animasjon for hopp */
+        @keyframes hopp {
+            50% {
+                top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img id="mann" src="walking_man.gif">
+    <div id="gulv"></div>
+    <script>
+        /* Funksjon for å håndtere når en tast trykkes ned */
+        function knappNed(tast) {
+            if (tast === 'd') {
+                d_nede = true;
+            }
+            if (tast === 'a') {
+                a_nede = true;
+            }
+            if (tast === ' ' && !erILufta) { // SPACE trykket
+                erILufta = true;
+                mann.style.animation = 'none';
+                mann.offsetWidth;
+                mann.style.animation = "hopp 1s";
+                setTimeout(harLandet, 1000);
+            }
+        }
+
+        /* Funksjon for å håndtere når figuren lander etter hopp */
+        function harLandet() {
+            erILufta = false;
+        }
+
+        /* Funksjon for å håndtere når en tast slippes */
+        function knappOpp(tast) {
+            if (tast === 'd') {
+                d_nede = false;
+            }
+            if (tast === 'a') {
+                a_nede = false;
+            }
+        }
+
+        /* Hoved event handler for tastetrykk */
+        function handleKeypress(event) {
+            if (event.type === "keydown") {
+                knappNed(event.key);
+            } else if (event.type === "keyup") {
+                knappOpp(event.key);
+            }
+        }
+
+        /* Animasjonsfunksjonen som oppdaterer figurens posisjon */
+        function tegn() {
+            // Bestem farten basert på hvilke taster som er nede
+            if (a_nede && d_nede) {
+                fart_left = 0;
+            } else if (a_nede) {
+                fart_left = -10;
+                mann.style.transform = "rotateY(0deg)";
+            } else if (d_nede) {
+                fart_left = 10;
+                mann.style.transform = "rotateY(180deg)";
+            } else {
+                fart_left = 0;
+            }
+
+            // Oppdater posisjonen basert på farten
+            pos_left += fart_left;
+            mann.style.left = pos_left + "px";
+
+            // Fortsett animasjonsløkken
+            requestAnimationFrame(tegn);
+        }
+
+        let pos_left = 0; // Horisontal posisjon
+        let fart_left = 0; // Horisontal fart
+        let d_nede = false; // Status for D-tasten
+        let a_nede = false; // Status for A-tasten
+        let erILufta = false; // Status for om figuren er i luften
+
+        // Starter animasjonsløkken
+        tegn();
+
+        // Legger til event listeners for tastetrykk
+        document.addEventListener('keydown', handleKeypress);
+        document.addEventListener('keyup', handleKeypress);
+    </script>
+</body>
+</html>

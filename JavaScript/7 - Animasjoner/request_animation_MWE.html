@@ -3,60 +3,61 @@
 <head>
     <title>Kvadrat Animasjon</title>
     <style>
-        #kvadrat {
+        #ball {
             width: 50px;
             height: 50px;
             background-color: red;
             position: absolute;
-            left: 0px;
+            top:232px;
+            left: 323px;
+            border-radius: 50%;
+            z-index: 1;
         }
-
-        @keyframes framOgTilbake {
-            50%{
-                left: calc(100% - 50px);
-            }
+        #skytBtn{
+            position: absolute;
+            top:50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #cannon{
+            position: absolute;
+            top:200px;
+            left: 100px;
+            z-index: 2;
+            width: 280px;
         }
     </style>
 </head>
 <body>
-
-<div id="kvadrat" onclick="startAnim()"></div>
+<button id="skytBtn" onclick="startAnim()">Start/stopp animasjon</button>
+<img id="cannon" src="cannon.png">
+<div id="ball"></div>
 
 <script>
     function startAnim(){
-        if(anim){
-            kvadrat.style.animation = "";
-        }else{
-           kvadrat.style.animation = "framOgTilbake 2s linear"; 
-        }
-        anim = !anim;
+        animasjon();
     }
-    function stoppAnim(){
 
-    }
-    let anim = false;
-    // var kvadrat = document.getElementById('kvadrat');
-    // var pos = 0;
-    // var retning = 2;
 
-    // function animasjon() {
-    //     // Oppdater posisjonen til kvadratet
-    //     pos += retning;
+    function animasjon() {
+        // Oppdater posisjonen til kvadratet
+        posX += fartX;
         
-    //     // Sjekk for å snu bevegelsen hvis kvadratet når kanten
-    //     if (pos <= 0 || pos >= window.innerWidth - 50) {
-    //         retning *= -1;
-    //     }
+        // Sjekk for å snu bevegelsen hvis kvadratet når kanten
+        if (posX <= 0 || posX >= window.innerWidth - 50) {
+            fartX *= -1;
+        }
 
-    //     // Oppdater kvadratets 'left' stil for å flytte den
-    //     kvadrat.style.left = pos + 'px';
+        // Oppdater ballens 'left' stil for å flytte den
+        ball.style.left = posX + 'px';
 
-    //     // Kall på animasjon funksjonen igjen for neste frame
-    //     requestAnimationFrame(animasjon);
-    // }
+        // Kall på animasjon funksjonen igjen for neste frame
+        requestAnimationFrame(animasjon);
+    }
 
-    // // Start animasjonen
-    // animasjon();
+    let fartX = 5;
+    let posX = 100;
+
 </script>
 
 </body>
