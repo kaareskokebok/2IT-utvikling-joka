@@ -10,8 +10,8 @@
             width: 50px;
             height: 50px;
             position: absolute;
-            top: 50%;
-            left: 0px;
+            top: 300px;
+            left: 400px;
             /* Lager ball */
             border-radius: 50%;  
         }
@@ -23,14 +23,15 @@
     <script>
         function sjekkKollisjoner(){
             // Sjekk høyre vegg. window.innerWidth
-            if (posX > window.innerWidth){
+            if (posX > window.innerWidth - 50){
                 // Snu fartsretningen
                 fartX = -fartX;
             } // TODO: sjekk kollisjon venstre vegg
             // Tips: Hvis x-posisjon er mindre enn 0, 
             // snu fartsretningen.
-            else if (...){
-
+            else if (posX < 0){
+                // Snu fartsretningen
+                fartX = -fartX;
             }
 
         }
@@ -44,8 +45,12 @@
             // Kjør funksjonen på nytt når bildet på nettsiden er oppdatert
             requestAnimationFrame(animerBall);
         }
-let posX = 0;
-let fartX = 3;  
+
+        // TODO: Legg til bevegelse i y-retning også
+let posX = 400;
+let posY = 300;
+let fartX = 3;
+let fartY = 1;  
 // Start animasjon
 animerBall();
     </script>
