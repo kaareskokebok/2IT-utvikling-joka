@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<!--Løsning av oppgave 2-->
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #boks {
+            width: 250px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #boks:hover {
+            animation-name: myboks;
+            animation-duration: 4s;
+        }
+
+        @keyframes myboks {
+            50% {transform: rotate(3deg);}
+            100% { background-color: purple; }
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="boks"></div>
 </body>
 </html>
