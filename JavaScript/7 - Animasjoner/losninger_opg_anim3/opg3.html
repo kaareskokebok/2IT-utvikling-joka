@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS-anim scale</title>
+    <style>
+        #ball {
+            background-color: midnightblue;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="ball"></div>
+
+    <script>
+        function sjekkkolosjoner() {
+            if (posX >= window.innerWidth - 50 || posX < 0) {
+                fartX = -fartX * 1;
+            }
+
+            if (posY >= window.innerHeight - 50 || posY < 0) {
+                fartY = -fartY * 1.1;
+            }
+        }
+
+        function animerball() {
+            sjekkkolosjoner();
+            posX += fartX;
+            posY += fartY;
+            ball.style.left = posX + "px";
+            ball.style.top = posY + "px";
+            window.requestAnimationFrame(animerball);
+        }
+
+        let posX = 400;
+        let posY = 300;
+        let fartX = 6;
+        let fartY = 6; // endret fartY-verdien
+        const ball = document.getElementById('ball');
+        animerball();
+    </script>
 </body>
 </html>
