@@ -1,11 +1,109 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #tak{
+            top: 200px;
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            background-color: black;
+        }
+        #gulv{
+            top: 600px;
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            background-color: black;
+        }
+        #vegLeft {
+            width: 20px;
+            height: 400px;
+            background-color: black;
+            position: absolute;
+            top: 200px;
+            left: 0%;
+        }
+        #vegRight {
+            width: 20px;
+            height: 400px;
+            background-color: black;
+            position: absolute;
+            top: 200px;
+            right: 0%;
+        }
+
+        #ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            background-color: red;
+            animation: myball infinite 3s;
+        }
+
+
+
+    </style>
 </head>
 <body>
-    
+    <div id="vegLeft"></div>
+    <div id="vegRight"></div>
+    <div id="tak"></div>
+    <div id="ball"></div>
+    <div id="gulv"></div>
+
 </body>
+<script>
+    function sjekkKolisjoner(){
+
+
+        if (posX > window.innerWidth - 70){
+            fartX = -fartX
+        }
+       if (posX < 20){
+            fartX = -fartX
+        }
+        if (posY > 200){
+            fartY = -fartY
+        }
+        if (posY < 560){
+            fartY = -fartY
+        }
+     
+
+    };
+        function teleportBall() {
+            posX = Math.random() * (window.innerWidth - 70);
+            posY = Math.random() * (560 - 200) + 200;
+        }
+    function animerBall(){
+        posX += fartX;
+        posY += fartY;
+
+        ball.style.left = posX + "px";
+        ball.style.top= posY + "px"
+        sjekkKolisjoner()
+        requestAnimationFrame(animerBall);
+        
+        if (Date.now() - lastTeleportTime >= 4000) {
+                teleportBall();
+                lastTeleportTime = Date.now();
+            }
+
+    }
+
+
+
+let posY = 300;
+let posX = 400;
+let fartY = 2;
+let fartX = 3;
+let lastTeleportTime = Date.now();
+animerBall();
+</script>
 </html>
