@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #ball {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0%;
+            background-color: red;
+            animation: myball infinite 3s;
+
+        }
+
+
+        @keyframes myball {
+            0% { left: 0%; }
+            50% { left: 94%; }
+            100% {left: 0%;}
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="ball"></div>
 </body>
 </html>
