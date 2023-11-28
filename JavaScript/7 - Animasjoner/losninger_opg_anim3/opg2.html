@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<!--Løsning av oppgave 2-->
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #boks {
+            width: 250px;
+            height: 100px;
+            background-color: green;
+            transition: transform 2s; /* Endret til transform for å inkludere rotasjon */
+        }
+
+        #boks:hover {
+            transform: rotate(20deg); /* Rotasjonsverdien (20 grader) kan justeres etter behov */
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Oppgaver animasjon</h1>
+    <div id="boks"></div>
 </body>
 </html>
