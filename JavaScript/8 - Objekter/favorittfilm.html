@@ -9,11 +9,11 @@
     <h1>Min favorittfilm</h1>
     <form id="formFilm">
         <label for="inpTittel">Tittel:</label><br>
-        <input id="inpTittel" type="text"><br>
+        <input value="Sphere" id="inpTittel" type="text" required><br>
         <label for="inpÅr">År:</label><br>
-        <input id="inpÅr" type="number"><br>
+        <input value=1999 id="inpÅr" type="number" required><br>
         <label for="selSjanger">Sjanger:</label><br>
-        <select id="selSjanger">
+        <select id="selSjanger" required>
             <option value="">Velg sjanger ...</option>
             <option>Drama</option>
             <option>Action</option>
@@ -26,11 +26,34 @@
         <input id="inpSkuespiller" type="text"><br>
         <input type="submit">
     </form>
+    <button onclick="seFavFilm()">Se favorittfilm</button>
+    <button onclick="endreAar()">Endre år</button>
+    <p id="txtUt"></p>
+
     <script>
-        // Opg. 3
-        // Lag en ny nettside med et skjema (form), der brukeren kan registrere
-        // sin favorittfilm. Ta med egenskapene tittel, år, sjanger og 
-        // skuespiller.
+        // Utfordring: Utvid nettsiden slik at det er mulig å registrere
+        // to favorittfilmer. seFavFilm skal da vise begge filmer, hvis begge
+        // er registrerte. endreAar må også vite hvilken film det skal endres
+        // år på
+        function endreAar(){
+            // Gi feilmelding dersom ingen film er registrert.
+            // Ellers, endre året i film-objektet til det nye året
+            // i input-feltet
+        }
+        function seFavFilm(){
+            // Skriv ut all info om den registrerte filmen.
+            // Dersom filmen ennå ikke er registrert, gi feilmelding.
+        }
+        function registrerFilm(event){
+            event.preventDefault();  // Unngå å sende data gjennom php
+            film["tittel"] = inpTittel.value;
+            // Alternativ måte med punktum
+            film.sjanger = selSjanger.value;
+            // TODO: registrer ferdig
+            
+        }
+        formFilm.onsubmit = registrerFilm;
+        const film = {};  // Et tomt filmobjekt
     </script>
 </body>
 </html>
