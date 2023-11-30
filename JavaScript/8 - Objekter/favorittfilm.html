@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fav mov</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <h1>Min favorittfilm</h1>
@@ -54,6 +55,13 @@
         }
         formFilm.onsubmit = registrerFilm;
         const film = {};  // Et tomt filmobjekt
+        // Sjekke om film-objektet er tomt
+        console.log(Object.keys(film).length === 0);  // true
+        // JSON-metode, krever ingen eksterne biblioteker
+        console.log(JSON.stringify(film) === '{}');  // true
+        // Neste krever import av jQuery-biblioteket i head-elementet
+        console.log(jQuery.isEmptyObject(film));  // true
+        
     </script>
 </body>
 </html>
