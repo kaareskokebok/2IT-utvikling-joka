@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>HTML består av to knapper, en for hver film du liker.
+        Når en knapp trykkes på, vises et filmklipp fra denne filmen, sammen
+        med litt informasjon om filmen. Begge filmene ligger som objekter.</p>
+<p>Bruk youtube to mp4 converter, finn to korte klipp.</p>
+
+<video id="vid" src=""></video>
+        <script>
+
+            const film1 = {
+                tittel:"Filmtittel",
+                info:"kort tekst om filmen",
+                videofil: "filmklipp.mp4"
+            };
+            // Sette src til video-elementet vha. objektet
+            vid.src = film1.videofil;
+            // Spille av filmen
+            vid.play();
+        </script>
+</body>
+</html>

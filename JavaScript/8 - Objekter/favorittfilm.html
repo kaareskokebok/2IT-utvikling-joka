@@ -40,10 +40,28 @@
             // Gi feilmelding dersom ingen film er registrert.
             // Ellers, endre året i film-objektet til det nye året
             // i input-feltet
+            if (JSON.stringify(film) === '{}'){
+                txtUt.textContent = "Ingen film registrert.";
+                return;  // Avslutt funksjonen
+            }
+            // Vet nå at filmen er registrert
+            let nyttÅr = inpÅr.value;
+            film["år"] = nyttÅr;
+            txtUt.textContent = "Året ble endret.";
         }
+        
         function seFavFilm(){
             // Skriv ut all info om den registrerte filmen.
             // Dersom filmen ennå ikke er registrert, gi feilmelding.
+            if (JSON.stringify(film) === '{}'){
+                txtUt.textContent = "Ingen film registrert.";
+                return;  // Avslutt funksjonen
+            }
+            txtUt.innerHTML = `<h3>Min favorittfilm</h3>
+            Tittel: ${film["tittel"]}<br>
+            Sjanger: ${film.sjanger}<br>
+            År: ${film.år}<br>
+            Skuespiller: ${film.skuespiller}`;
         }
         function registrerFilm(event){
             event.preventDefault();  // Unngå å sende data gjennom php
@@ -51,6 +69,8 @@
             // Alternativ måte med punktum
             film.sjanger = selSjanger.value;
             // TODO: registrer ferdig
+            film.skuespiller = inpSkuespiller.value;
+            film.år = inpÅr.value;
             
         }
         formFilm.onsubmit = registrerFilm;
