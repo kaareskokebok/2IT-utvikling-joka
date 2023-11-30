@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objekt 1</title>
+</head>
+<body>
+    
+    <script>
+        // Bruk const på array og objekter
+        // Klønete med array for å lagre elevdata
+        // const elev = ["per", "jensen", "mann", "blondt", 26];
+        // Bedre med objekt
+        const elev = {
+            fornavn:"Per",
+            etternavn: "Jensen",
+            kjønn: "mann",
+            hårfarge:"blondt",
+            alder: 26
+        }
+        // Hente ut verdier
+        document.write(elev["fornavn"]);  // Per
+        document.write(elev["alder"]);  // 26
+        document.write(elev["hårfarge"]);  // blondt
+
+        // Opg. 1
+        // a) Lag et objekt for en bil. Ta med minst 4 egenskaper.
+        const bil = {
+            modell: "Saab",
+            år: 1999,
+            toppfart: 195,
+            farge: "svart"
+        };
+        
+        // b) Endre årsmodell på linja nedenfor der du lagde objektet.
+        bil["år"] = 2003;
+        // c) Skriv ut en kort tekst om bilen, hvor du henter egenskapene fra
+        // objektet.
+        let txt = `Min ${bil["modell"]} er en fin og ${bil["farge"]} bil <br>
+        fra ${bil["år"]}. Den har toppfart ${bil["toppfart"]} km/t!`;
+
+        document.write("<br>" + txt);
+
+        // Opg. 2
+        // a) Lag et objekt for din favorittfilm/bok. Ta med minst fire egenskaper.
+        // Skriv to av egenskapene feil med vilje.
+        // b) Endre de to egenskapene som var feil, nedenfor koden der du lagde
+        // objektet.
+        // c) Skriv en kort tekst om filmen, der du henter egenskapene fra 
+        // objektet med film["egenskap"].
+        const film = {};
+        film["tittel"] = "Sphere";
+        
+        // Opg. 3
+        // Lag en ny nettside med et skjema (form), der brukeren kan registrere
+        // sin favorittfilm. Ta med egenskapene tittel, år, sjanger og 
+        // skuespiller.
+
+    </script>
+</body>
+</html>
