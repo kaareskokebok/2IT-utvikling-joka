@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>oppgave 3</title>
+
+    <style>
+        #ball{
+            width: 150px;
+            height: 150px;
+            left: 100px;
+            border-radius: 50%;
+            background-color: green;
+            animation: framOgTilbake 4s infinite;
+        }
+        @keyframes framOgTilbake {
+            0% {transform: translateY(0px);}
+            50% {transform: translateY(400px);}
+        }
+    </style>
 </head>
 <body>
+    <div id="ball"></div>
     
 </body>
 </html>

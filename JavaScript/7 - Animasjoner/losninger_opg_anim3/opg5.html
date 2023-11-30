@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #tak{
+            top: 200px;
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            background-color: black;
+        }
+        #gulv{
+            top: 600px;
+            height: 20px;
+            width: 100%;
+            position: absolute;
+            background-color: black;
+        }
+        #ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            background-color: red;
+            animation: myball infinite 3s;
+        }
+
+
+
+    </style>
 </head>
 <body>
-    
+    <div id="tak"></div>
+    <div id="ball"></div>
+    <div id="gulv"></div>
+
 </body>
+<script>
+    function sjekkKolisjoner(){
+        if (posY > 200){
+            fartY = -fartY
+        }
+        if (posY < 560){
+            fartY = -fartY
+        }
+    };
+    function animerBall(){
+        posY += fartY;
+
+        ball.style.top= posY + "px"
+        sjekkKolisjoner()
+        requestAnimationFrame(animerBall);
+
+    }
+
+
+
+let posY = 200;
+let fartY = 5;
+animerBall();
+</script>
 </html>
