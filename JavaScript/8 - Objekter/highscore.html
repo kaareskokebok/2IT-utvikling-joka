@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High score</title>
+</head>
+<body>
+    <!-- 
+        Lag en nettside med high score for et spill.
+High score lagres i et objekt med nøklene (egenskapene)
+spillernavn, score og dato.
+Når en ny rekord registreres, sjekkes det først om score er høyere enn den gamle rekorden.
+Ekstra: Inkluder den neste beste scoren også. 
+-->
+<h1>High score for MyGame</h1>
+<input id="inpNavn" type="text" value="Jens123"><br>
+<input id="inpScore" type="number" value="200"><br>
+<input id="inpDato" type="date">
+<button onclick="nyHighScore()">Registrer score</button>
+<button onclick="visHighScore()">Vis high score</button>
+<p id="txtUt"></p>
+
+<script>
+    // Ekstraoppgave: high score og nest best score!
+    function nyHighScore(){
+        // Sjekk om den nye score er større enn den gamle
+        // Hvis nei, gi tilbakemelding.
+        // Hvis ja, gi tilbakemelding og endre high score.
+    }
+
+    function visHighScore(){
+        // Vis alle egenskapene og verdiene til highscore-objektet
+    }
+
+    // Highscore objektet med nøklene (egenskapene) navn, score og dato
+    const highscore = {
+        navn:"Per123",
+        score:1234,
+        dato:"04.12.2023"
+    };
+</script>
+</body>
+</html>
