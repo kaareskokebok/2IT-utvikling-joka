@@ -27,10 +27,31 @@ Ekstra: Inkluder den neste beste scoren også.
         // Sjekk om den nye score er større enn den gamle
         // Hvis nei, gi tilbakemelding.
         // Hvis ja, gi tilbakemelding og endre high score.
+        let nyScore = inpScore.value;
+        if (nyScore <= highscore.score){
+            // Ikke ny highscore
+            txtUt.textContent = "Dessverre, ikke en ny high score.";
+            return;
+        }
+        // Ny high score!
+        let nyNavn = inpNavn.value;
+        let nyDato = inpDato.value;
+        // Endre objektets verdier
+        highscore.navn = nyNavn;
+        highscore.score = nyScore;
+        highscore.dato = nyDato;
+        // Tilbakemelding
+        txtUt.textContent = `Gratulerer, ${nyNavn}. Du har oppnådd high score!`;
     }
 
     function visHighScore(){
         // Vis alle egenskapene og verdiene til highscore-objektet
+        let txt = "High score info <hr>";
+        for (const egenskap in highscore){
+            const verdi = highscore[egenskap];
+            txt += `${egenskap}: ${verdi}<br>`;
+        }
+        txtUt.innerHTML = txt;
     }
 
     // Highscore objektet med nøklene (egenskapene) navn, score og dato
