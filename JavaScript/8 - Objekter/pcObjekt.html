@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC</title>
+</head>
+<body>
+    <p>Oppvarming objekter:
+        Lag et objekt for din PC.
+        Ta med egenskaper som prosessorhastighet, 
+        minne, lagring, ekstrautstyr osv.
+        <ul>
+            <li>Du dobler minnet. Skriv kode som gjør denne endringen.</li>
+            <li>Skriv kode som legger til en ekstra egenskap etter at du har laget objektet.
+         F.eks. du kjøper en ekstern harddisk.</li>
+         <li>Finn ut hvordan du kan bruke en løkke til å skrive ut alle egenskapene 
+        med deres verdier (på eng: keys and values).</li>
+        </ul>
+        </p>
+
+        <p id="txtUt"></p>
+
+        <script>
+
+            const pc = {
+                cpu:"4.1GHz",
+                minne: "32GB",
+                hd:"2TB"
+            }
+            pc["minne"] = "64GB";
+            // pc.minne = "64GB";
+            // Lagt til ny egenskap og verdi (key and value)
+            pc.skjerm = '32tommer';
+            txtUt.textContent = pc.skjerm;
+
+            txtUt.innerHTML = "Egenskaper<br>";
+            for (const key in pc) {
+                txtUt.innerHTML += key + "<br>";
+            }
+
+            txtUt.innerHTML += "<hr>Egenskaper og verdier (keys and values)<br>";
+            for (const key in pc) {
+                // Skriv ut BÅDE keys AND values
+                // Resultat:
+                // cpu: 4.1GHZ
+                // minne: 64GB
+                // osv.
+                let verdi = pc[key];
+                txtUt.innerHTML += `${key}: ${verdi} <br>`;
+            };
+        </script>
+</body>
+</html>

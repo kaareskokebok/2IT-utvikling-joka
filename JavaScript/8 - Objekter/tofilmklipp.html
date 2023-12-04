@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-     
+     #vid{
+        width: 450px;
+        height: 300px;
+     }
     </style>
 </head>
 <body>
@@ -15,11 +18,23 @@
 <p>Bruk youtube to mp4 converter, finn to korte klipp.</p>
 
 <video id="vid" src="" controls></video><br>
-<button onclick="visFilm()">Sphere</button>
-<button onclick="visFilm()">3 Godfathers</button>
+<button onclick="visFilm(this)">Sphere</button>
+<button onclick="visFilm(this)">3 Godfathers</button>
 <p id="txtUt"></p>
         <script>
-            function visFilm(trykketKnapp){
+            function visFilm(knapp){
+                /* knapp er knappen som ble trykket på */
+                // alert(knapp.textContent);
+                if (knapp.textContent == "Sphere"){
+                    txtUt.innerHTML = sphere.info;
+                    vid.src = sphere.videofil;
+                    vid.play();
+                } else if(knapp.textContent == "3 Godfathers"){
+                
+                    txtUt.innerHTML = godfathers.info;
+                    vid.src = godfathers.videofil;
+                    vid.play();
+                }
 
             }
             const sphere = {
