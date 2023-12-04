@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+     
+    </style>
 </head>
 <body>
     <p>HTML består av to knapper, en for hver film du liker.
@@ -11,18 +14,28 @@
         med litt informasjon om filmen. Begge filmene ligger som objekter.</p>
 <p>Bruk youtube to mp4 converter, finn to korte klipp.</p>
 
-<video id="vid" src=""></video>
+<video id="vid" src="" controls></video><br>
+<button onclick="visFilm()">Sphere</button>
+<button onclick="visFilm()">3 Godfathers</button>
+<p id="txtUt"></p>
         <script>
+            function visFilm(trykketKnapp){
 
-            const film1 = {
-                tittel:"Filmtittel",
-                info:"kort tekst om filmen",
-                videofil: "filmklipp.mp4"
+            }
+            const sphere = {
+                tittel:"Sphere",
+                info:`Spennende undervanns-thriller på jakt etter utenomjordisk liv. <br>
+                Fantastiske skuespillere som Sharon Stone og Dustin Hoffman.`,
+                videofil: "movies/sphere_trailer.mp4"
             };
-            // Sette src til video-elementet vha. objektet
-            vid.src = film1.videofil;
-            // Spille av filmen
-            vid.play();
+
+            const godfathers = {
+                tittel:"3 Godfathers",
+                info:`Superkul western med tøffe John Wayne. <br>
+                Her er det ingen som bryr seg om noen blir krenket!`,
+                videofil: "movies/wayne_trailer.mp4"
+            };
+            
         </script>
 </body>
 </html>
