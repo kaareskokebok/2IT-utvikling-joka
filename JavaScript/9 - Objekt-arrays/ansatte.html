@@ -7,9 +7,24 @@
 </head>
 <body>
    
+    <button onclick="visAlleAnsatte()">Vis alle ansatte</button>
+    <button onclick="visAntallAnsatte()">Vis antall ansatte</button>
 
+    <p id="txtUt"></p>
     <script>
-
+        // TODO: legg til visAntallAnsatte()
+        function visAlleAnsatte(){
+            // Begrens til fornavn og etternavn
+            /* Per Jensen
+            Sara Johnsen
+            ...
+            */
+           txtUt.innerHTML = "<h3>Ansattliste</h3>";
+           for (let i=0; i<ansatte.length; i++) {
+                let ansatt = ansatte[i];
+                txtUt.innerHTML += `${ansatt.fornavn} ${ansatt.etternavn} <br>`;
+           }
+        }
 
     
         // Lager et ansatte objekt-array
