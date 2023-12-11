@@ -6,8 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-
-   
+    <label for="inpNr">Ansattnr:</label><br>
+    <input type="text" id="inpNr"><br>
+    <button onclick="sokAnsattNr()">Søk på ansattnr</button>
     <button onclick="visAlleAnsatte()">Vis alle ansatte</button>
     <button onclick="visAntallAnsatte()">Vis antall ansatte</button>
 
@@ -16,7 +17,20 @@
         // TODO #2: Legg til html og JS slik at du kan søke på en ansatt med
         // ansattnr, og skrive ut all info dersom den finnes. Ellers gi feilmelding.
 
+        // TODO #3: Legg til html og JS slik at du skrive inn en alder, og deretter få ut alle som
+        // er minst denne alderen. Dersom 25 skrives inn, skriver nettsiden ut alle ansatte som er minst 25 år.
+        function sokAnsattNr(){
+            // Les inn nr fra input
+
+            // Bruk løkka fra visAlleAnsatte til å gå gjennom alle 
+            // ansatte og sammenlign nr med nr fra input
+
+            // Hvis match, skriv ut all info.
+        }
         // TODO #1: legg til visAntallAnsatte()
+        function visAntallAnsatte(){
+            txtUt.innerHTML = ansatte.length + " ansatte";
+        }
         function visAlleAnsatte(){
             // Begrens til fornavn og etternavn
             /* Per Jensen
