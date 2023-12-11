@@ -18,13 +18,30 @@
         // ansattnr, og skrive ut all info dersom den finnes. Ellers gi feilmelding.
 
         // TODO #3: Legg til html og JS slik at du skrive inn en alder, og deretter få ut alle som
-        // er minst denne alderen. Dersom 25 skrives inn, skriver nettsiden ut alle ansatte som er minst 25 år.
+        // er minst denne alderen. Dersom 25 skrives inn, skriver nettsiden ut alle ansatte ved fornavn og alder
+        // som er minst 25 år.
+
+        // TODO (ekstra) #4: Legg til mulighet for å stemple inn og ut, vha. ansattnr.
         function sokAnsattNr(){
             // Les inn nr fra input
-
+            let nrInn = inpNr.value;
             // Bruk løkka fra visAlleAnsatte til å gå gjennom alle 
             // ansatte og sammenlign nr med nr fra input
+            for (let i=0; i<ansatte.length; i++) {
+                let ansatt = ansatte[i];
+                if (nrInn === ansatt.ansattnr){
+                    // Fant den ansatte
+                    txtUt.innerHTML = `<p>Ansatt funnet. Info her</p>
+                    <ul>
+                        <li>Fornavn: ${ansatt.fornavn}</li>
+                        <li>Etternavn: ${ansatt.etternavn}</li>
+                        <li>Ansattnr: ${ansatt.ansattnr}</li>
+                        <li>Alder: ${ansatt.alder}</li>
+                    </ul>
+                    `;
+                }
 
+           }
             // Hvis match, skriv ut all info.
         }
         // TODO #1: legg til visAntallAnsatte()
