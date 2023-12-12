@@ -15,6 +15,18 @@
     <p id="txtUt"></p>
     <script>
 
+        function stempleInn(){
+            let ansNr = inpNr.value;
+            if (!erGyldigNr(ansNr)){
+                txtUt.textContent = "Ugyldig ansattnr.";
+                return;
+            }
+            // Ansattnr er gyldig, gå videre
+            // Sjekk at ansatt ikke allerede er stemplet inn
+            // Stemple den ansatte inn, gjør endring på objektets
+            // erStempletInn egenskap
+
+        }
         // Hjelpefunksjon for å kontrollere ansattnummeret
         function erGyldigNr(nr) {
             // Kontrollerer om ansattnummeret nr er gyldig
