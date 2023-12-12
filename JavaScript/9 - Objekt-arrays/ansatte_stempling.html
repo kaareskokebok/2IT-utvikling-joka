@@ -22,9 +22,25 @@
                 return;
             }
             // Ansattnr er gyldig, gå videre
+            // Finn korrekt ansatt objekt
+            let ansattIndeks = -1;
+            for (let i=0; i<ansatte.length; i++){
+                if (ansatte[i].ansattnr == ansNr){
+                    ansattIndeks = i;
+                    break;  // Avslutt løkka
+                }
+            }
+            // ansatt er den som forsøker å stemple inn
+            let ansatt = ansatte[ansattIndeks];
             // Sjekk at ansatt ikke allerede er stemplet inn
-            // Stemple den ansatte inn, gjør endring på objektets
-            // erStempletInn egenskap
+            if(ansatt.erStempletInn) {
+                txtUt.textContent = "Allerede stemplet inn!";
+            }else{
+                // Stemple den ansatte inn, gjør endring på objektets
+                // erStempletInn egenskap
+                ansatte[ansattIndeks].erStempletInn = true;
+                txtUt.textContent = `Ansatt ${ansatt.ansattnr} er nå stemplet inn.`;
+            }
 
         }
         // Hjelpefunksjon for å kontrollere ansattnummeret
