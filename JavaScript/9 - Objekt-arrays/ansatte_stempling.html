@@ -14,6 +14,21 @@
   
     <p id="txtUt"></p>
     <script>
+
+        // Hjelpefunksjon for å kontrollere ansattnummeret
+        function erGyldigNr(nr) {
+            // Kontrollerer om ansattnummeret nr er gyldig
+            // Returnerer true hvis ja, false ellers
+            let gyldig = false;
+            for (let ansatt of ansatte){
+                if (ansatt.ansattnr == nr){
+                    gyldig = true;
+                    break;  // Avslutt løkka, ansatt funnet
+                }
+            }
+            return gyldig;
+        }
+
         function visAlleAnsatte(){
            txtUt.innerHTML = "<h3>Ansattliste</h3>";
            for (let i=0; i<ansatte.length; i++) {
@@ -21,7 +36,7 @@
                 txtUt.innerHTML += `${ansatt.fornavn} ${ansatt.etternavn} <br>`;
            }
         }
-        
+
     
         // Lager et ansatte objekt-array
         let ansatte = [
