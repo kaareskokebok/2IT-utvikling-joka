@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inpNr">Ansattnr:</label><br>
+    <input type="text" id="inpNr"><br>
+    <button onclick="stempleInn()">Stemple inn</button>
+    <button onclick="stempleUt()">Stemple inn</button>
+    <button onclick="visAlleAnsatte()">Vis alle ansatte</button>
+  
+    <p id="txtUt"></p>
+    <script>
+        function visAlleAnsatte(){
+           txtUt.innerHTML = "<h3>Ansattliste</h3>";
+           for (let i=0; i<ansatte.length; i++) {
+                let ansatt = ansatte[i];
+                txtUt.innerHTML += `${ansatt.fornavn} ${ansatt.etternavn} <br>`;
+           }
+        }
+        
+    
+        // Lager et ansatte objekt-array
+        let ansatte = [
+    {
+        fornavn: "Per",
+        etternavn: "Jensen",
+        alder: 17,
+        ansattnr: "08543",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Sara",
+        etternavn: "Johnsen",
+        alder: 21,
+        ansattnr: "09875",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Lars",
+        etternavn: "Nielsen",
+        alder: 25,
+        ansattnr: "12345",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Emma",
+        etternavn: "Hansen",
+        alder: 30,
+        ansattnr: "54321",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Ole",
+        etternavn: "Kristiansen",
+        alder: 45,
+        ansattnr: "20202",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Ingrid",
+        etternavn: "Larsen",
+        alder: 28,
+        ansattnr: "30303",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Mohamed",
+        etternavn: "Ali",
+        alder: 32,
+        ansattnr: "40404",
+        erStempletInn: false
+    },
+    {
+        fornavn: "Aisha",
+        etternavn: "Ahmed",
+        alder: 26,
+        ansattnr: "50505",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Andreas",
+        etternavn: "Berg",
+        alder: 37,
+        ansattnr: "60606",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Maria",
+        etternavn: "Solberg",
+        alder: 29,
+        ansattnr: "70707",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Jan",
+        etternavn: "Karlsen",
+        alder: 50,
+        ansattnr: "80808",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Sofie",
+        etternavn: "Nilsen",
+        alder: 22,
+        ansattnr: "90909",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Karl",
+        etternavn: "Pettersen",
+        alder: 41,
+        ansattnr: "10101",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Linda",
+        etternavn: "Johansen",
+        alder: 35,
+        ansattnr: "11111",
+        erStempletInn: true
+    },
+    {
+        fornavn: "Ali",
+        etternavn: "Omar",
+        alder: 39,
+        ansattnr: "12121",
+        erStempletInn: true
+    }
+];
+
+
+
+
+
+    </script>
+</body>
+</html>
