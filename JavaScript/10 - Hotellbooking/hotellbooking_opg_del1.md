@@ -8,9 +8,9 @@ sjekke ut.
 
 ### Datastruktur
 For å holde styr på rommene og gjestene, brukes et array. Et ledig rom betegnes
-ved ´""´. I begynnelsen ser arrayet slik ut:
+ved `""`. I begynnelsen ser arrayet slik ut:
 
-`let rommene = ["jens","","","arne",""];``
+`let rommene = ["jens","","","arne",""];`
 
 ### Steg 1: oversiktsfunksjon
 Lag en oversiktsfunksjon med en knapp i HTML.
