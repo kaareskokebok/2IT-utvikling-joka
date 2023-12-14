@@ -10,4 +10,7 @@ Installer.
 
 # Konfigurasjon
 
+Bruk standardinnstillinger for type og nettverksporter.
+[Bilde av installasjonen](Bilder/config-install-ports.png)
+
 
