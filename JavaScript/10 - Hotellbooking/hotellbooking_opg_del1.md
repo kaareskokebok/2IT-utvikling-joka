@@ -15,7 +15,6 @@ ved `""`. I begynnelsen ser arrayet slik ut:
 ### Steg 1: oversiktsfunksjon
 Lag en oversiktsfunksjon med en knapp i HTML.
 Utseendet på utskriften skal være:
-
 > Rom 1: jens
 > Rom 2: ledig
 > Rom 3: ledig
