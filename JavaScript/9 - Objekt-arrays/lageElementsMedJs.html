@@ -9,10 +9,6 @@
     <main id="mainContent">
     <h1>Lage elements med JS</h1>
 
-    <ul>Gaveønsker 
-        <li>RC-bil</li>
-        <li>Lekehelikopter</li>
-    </ul>
 </main>
     <script>
         let ele1 = document.createElement("h1");
@@ -37,7 +33,22 @@
         // Hvordan kan du nå få de to p-elementene til å bytte plass?
 
         // TODO 3: Lag en liste med 4 gaveønsker. Bruk ul og li.
+        let ele4 = document.createElement("h3");
+        ele4.textContent = "Mine gaveønsker:";
+        mainContent.appendChild(ele4);
 
+        let gaveoonsker = ["penger", "sokker", "pysj", "v-bucks"]
+
+        let ele5 = document.createElement("ul")
+
+        for (let onske of gaveoonsker){
+            // document.write(onske);
+            let onskeL = document.createElement("li")
+            onskeL.textContent = onske
+            ele5.appendChild(onskeL)
+        }
+
+        mainContent.appendChild(ele5);
     </script>
 </body>
 </html>
