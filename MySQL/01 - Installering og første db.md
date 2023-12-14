@@ -36,11 +36,13 @@ Installer.
 ### Lag første tabell
 - I query skriv følgende, og trykk lynet for å "execute script":
   
-```CREATE TABLE ansatte (
+```
+CREATE TABLE ansatte (
     ansatte_id INT,
     fornavn VARCHAR(50),
     etternavn VARCHAR(50),
     timelonn DECIMAL(5, 2),
     dato_ansatt DATE
-)```
+    )
+```
 
