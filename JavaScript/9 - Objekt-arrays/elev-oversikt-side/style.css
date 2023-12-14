@@ -1,0 +1,12 @@
+img{
+    width: 100px;
+}
+
+#klasseContainer{
+    display: flex;
+    flex-wrap: wrap;  
+    max-width: 800px;
+    /* align-content:center; */
+    margin: 0 auto;
+}
+

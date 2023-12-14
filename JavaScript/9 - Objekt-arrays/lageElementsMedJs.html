@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="mainContent">
+    <h1>Lage elements med JS</h1>
+
+    <ul>Gaveønsker 
+        <li>RC-bil</li>
+        <li>Lekehelikopter</li>
+    </ul>
+</main>
+    <script>
+        let ele1 = document.createElement("h1");
+        ele1.textContent = "En overskrift til";
+        // document.body.appendChild(ele1);
+        mainContent.appendChild(ele1)
+        // TODO lag et p-element. Plasser elementet inni mainContent
+        // Sett teksten til god jul
+        let ele2 = document.createElement("p");
+        ele2.textContent = "God Jul";
+        mainContent.appendChild(ele2);
+
+        // TODO: lag et p-element til med rød tekstfarge og grønn bakgrunnsfarge
+        // Sett teksten til Juletre og plasser det i mainContent
+        let ele3 = document.createElement("p");
+        ele3.textContent = "Juletre";
+        ele3.style.color = "red";
+        ele3.style.backgroundColor = "lightgreen";
+        // mainContent.appendChild(ele3);
+        // Plasser ele3 i mainContent, men foran ele2
+        mainContent.insertBefore(ele3, ele2);
+        // Hvordan kan du nå få de to p-elementene til å bytte plass?
+
+        // TODO 3: Lag en liste med 4 gaveønsker. Bruk ul og li.
+
+    </script>
+</body>
+</html>
