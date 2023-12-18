@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="hotelldatabase.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main>
+     <h1>Velkommen til Hotell Alexandra</h1>
+    <label for="inpNavn">Gjestens navn:</label>
+    <input id="inpNavn" type="text">
+    <label for="inpRomnr">Romnr:</label>
+    <input id="inpRomnr" type="text"><br>
+    <button onclick="sjekkInn()">Sjekk inn</button>
+    <button onclick="visOversikt()">Vis oversikt</button>
+    <button onclick="sjekkUt()">Sjekk ut</button>
+    <p id="txtUt"></p>   
+    </main>
+    
+    <article id="info">
+        <h2>Om hotellet</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta erat sed ipsum tempus vulputate. 
+    Fusce molestie fringilla nunc ac dapibus. Vivamus vulputate ligula nec tempus feugiat. 
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+    Cras tristique luctus magna, vitae imperdiet arcu. Phasellus gravida felis vitae est lobortis auctor. 
+    Sed et nunc eu libero mollis semper. Proin sit amet vehicula tortor, eget accumsan lorem. 
+    Fusce consequat vitae dolor a tempor. Sed imperdiet auctor justo at maximus.</p>
+
+    <p>Integer ut ultrices arcu. Integer id congue nunc. 
+    Nulla elementum posuere massa, ut lacinia nunc lacinia non. Quisque tempus tristique nulla, 
+    sagittis dignissim nisl ultrices quis. Cras dapibus aliquam urna, vel consequat sem congue ac. 
+    Proin id sollicitudin dui. Morbi congue tempus leo, at lacinia dolor dictum finibus. 
+    Nam luctus eros eu augue maximus euismod.</p>
+    </article>
+</body>
+</html>
