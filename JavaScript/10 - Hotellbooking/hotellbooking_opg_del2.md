@@ -4,6 +4,7 @@
 Etter å ha lært grunnleggende om arrayer og hvordan man bruker dem til å håndtere hotellbookinger, skal vi nå ta steget videre og benytte objekter for å representere rom og gjester ved Hotell Alexandra.
 
 ## Oppgavebeskrivelse
+Først bør du kopiere prosjektet vi laget med array i en ny mappe. 
 
 ### Del 1: Definer Objektstrukturer
 
@@ -42,7 +43,18 @@ Din oppgave er å utvide disse arrayene:
 
 Bruk ChatGPT til å hjelpe deg med å legge til flere rom og gjester i arrayene. 
 Husk å følge strukturen som er gitt i de opprinnelige objektene.
+Lagre begge arrayene i en egen fil, `hotelldatabase.js`. I head-elementet i HTML-fila ser det da slik ut:
 
+```
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="hotelldatabase.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+```
 ### Del 4: Implementer Funksjoner
 
 1. **Oversiktsfunksjon**: Skriv en funksjon som viser en oversikt over alle rom og deres status, samt hvilke gjester som er tildelt hvert rom.
