@@ -1,0 +1,3 @@
+# VS code extensions
+
+### SQLTools
