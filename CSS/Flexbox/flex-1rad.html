@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container{
+            width: 80%;
+            background-color:aquamarine;
+            height: 400px;
+            display:flex;
+            justify-content:center;
+            align-items:baseline;
+        }
+        .flex-child{
+            background-color: blue;
+            height:100px;
+            flex-grow: 1;
+            margin: 10px;
+        }
+        .flex-stortbarn{
+            background-color: blue;
+            height:100px;
+            flex-grow: 2;
+            margin: 10px;
+        }
+        .flex-ekstraStortBarn{
+            background-color: blue;
+            height:200px;
+            flex-grow: 3;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-child"></div>
+        <div class="flex-child"></div>
+        <div class="flex-stortbarn"></div>
+        <div class="flex-ekstraStortBarn"></div>
+        <div class="flex-child"></div>
+
+    </div>
+    
+</body>
+</html>

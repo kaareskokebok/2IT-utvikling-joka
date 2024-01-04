@@ -43,7 +43,7 @@ h1, h2 {
 }
 
 /* Inputfelt og etiketter */
-label, input {
+label, input, select {
     display: block;
     margin-bottom: 10px;
     margin-left: 20px;

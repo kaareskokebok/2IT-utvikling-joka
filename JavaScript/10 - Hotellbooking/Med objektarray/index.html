@@ -12,13 +12,27 @@
 
     <main>
      <h1>Velkommen til Hotell Alexandra</h1>
+     
     <label for="inpNavn">Gjestens navn:</label>
     <input id="inpNavn" type="text">
     <label for="inpRomnr">Romnr:</label>
-    <input id="inpRomnr" type="text"><br>
+    <input id="inpRomnr" type="text">
+    <label for="inpAlder">Alder:</label>
+    <input id="inpAlder" type="number">
+    <label for="inpEpost">E-post:</label>
+    <input id="inpEpost" type="email">
+    <label for="inpRomtype">Romtype</label>
+    <select id="inpRomtype">
+        <option value="">Velg romtype ...</option>
+        <option>Enkeltrom</option>
+        <option>Dobbeltrom</option>
+        <option>Junior Suite</option>
+        <option>Suite</option>
+    </select>
     <button onclick="sjekkInn()">Sjekk inn</button>
     <button onclick="visOversikt()">Vis oversikt</button>
     <button onclick="sjekkUt()">Sjekk ut</button>
+
     <p id="txtUt"></p>   
     </main>
     

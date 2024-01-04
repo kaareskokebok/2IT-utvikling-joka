@@ -1,26 +1,37 @@
 function visOversikt(){
     let txt = "<h3>Oversikt over gjester og rom</h3><hr>";
-    for (let i=0; i<rommene.length; i++){
-        let nr = i + 1;
-        let gjest = rommene[i];
-        txt += `Rom ${nr}: ${gjest} <br>`;
+    for (let rom of rommene) {
+        txt += `Rom ${rom.romNr}: ${rom.status}.`;
+        if (rom.status === "opptatt"){
+            let gjest = finnGjestRomnr(rom.romNr);
+            txt += ` Gjest: ${gjest.fornavn} ${gjest.etternavn}`;
+        }
+        txt += "<br>";
     }
     txtUt.innerHTML = txt;
+}
+
+function finnGjestRomnr(nr){
+    /* Returnerer gjesteobjektet på romnr nr. 
+    Dersom ingen gjest ble funnet, returneres undefined
+    */
+    for (let gjest of gjestene){
+        if (gjest.romNr === nr){
+            return gjest;
+        }
+    }
+    return undefined;
 }
 function sjekkInn(){
     let navn = inpNavn.value;
     // Finn første ledige rom
-    let romIndex = forsteLedigeIndex();
-    if (romIndex === -1){
+    let romnr = forsteLedigeRomnr();
+    if (romnr === -1){
         txtUt.textContent = "Ingen ledige rom. Prøv igjen senere.";
         return;  // Avslutter funksjonen
     }
-    
-    // Plasser gjesten på korrekt index
-    rommene[romIndex] = navn;
-    // Lag tilbakemelding
-    let romNr = romIndex + 1;
-    txtUt.textContent = `Gjesten ${navn} fikk rom nr. ${romNr}`;
+    let nyGjest = {fornavn: navn, etternavn:""}
+
 }
 
 function sjekkUt(){
@@ -36,12 +47,12 @@ function sjekkUt(){
         txtUt.textContent = "Romnr og navn stemmer ikke. Prøv igjen.";
     }
 }
-function forsteLedigeIndex(){
+function forsteLedigeRomnr(){
     // Returnerer første ledige index, hvis et rom er ledig.
     // Returnerer -1 ellers
-    for (let i=0; i<rommene.length; i++){
-        if (rommene[i] === ""){
-            return i;
+    for (let rom of rommene){
+        if (rom.status === "ledig"){
+            return rom.romNr;
         }
     }
     // Ledig rom ikke funnet, returnerer -1

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Lag et program som spør brukeren om hvor mange boller han har
+    spist. Dersom antall boller er minst 4, skriv ut "Wow, mye sukker."
+    Ellers skriv ut "Fint".
+
+    Utvidelse (både JS og Python): 
+    Hvis 3 boller og redbull, "mye sukker".
+    Hvis 4 eller flere boller og redbull, "ekstremt mye sukker".
+    Hvis 4 eller flere boller men ikke redbull, "savner du redbull?"!
+    Ellers "ok".
+<script>
+    let boller = parseInt(prompt("Hvor mange boller?"));
+    let drikkerRedbull = prompt("Drikker du redbull? (j/n) ") === "j";
+
+    if (boller === 3 && drikkerRedbull){
+        alert("Wow, mye sukker.")
+    }
+    else if (boller >= 4 && drikkerRedbull){
+        alert("Ekstremt mye sukker.")
+    }
+    else if(boller >= 4  && !drikkerRedbull){
+        alert("Savner du redbull?")
+    }
+    else{
+        alert("ok")
+    }
+    // OVERSETT TIL PYTHON
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lag et array med 100 tilfeldige terningkast.</p>
+    <ol>
+        <li>Skriv ut summen av kastene.</li>
+        <li>Skriv ut antall seksere.</li>
+        <li>Skriv ut antall kast som gav 1 eller 2 øyne.</li>
+        <li>Skriv ut antall ganger du fikk 2 seksere på rad</li>
+    </ol>
+  
+    <script>
+        let kastene = [];
+        for(let i=0; i<100; i++){
+            let nyttKast = Math.floor(Math.random()*6) + 1;
+            // Legg kastet inn i arrayet
+            kastene.push(nyttKast);
+        }
+        // Nå er kastene fylt med 100 tilfeldige terningkast
+        // a: summen
+        let summ = 0;
+        for(let i=0; i<kastene.length; i++){
+            summ += kastene[i];
+        }
+        // Eller for(let kast of kastene) og øk summen med kast
+        document.write("Summen er: " + summ);
+
+        // b: Antall seksere
+        let antallSeksere = 0;
+        // Tips: Løp gjennom kastene og tell opp antall seksere
+        for(let kast of kastene){
+            // document.write(kast +"<br>");
+            if (kast === 6){
+                antallSeksere++;
+            }
+        }
+        // TODO: Skriv ut antall seksere
+    </script>
+</body>
+</html>
