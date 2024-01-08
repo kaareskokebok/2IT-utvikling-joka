@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "AUTHCON",
+            "database": "School",
+            "username": "root",
+            "password": "uctoi7p83"
+        }
+    ],
+    "livePreview.defaultPreviewPath": "/MySQL/userauth/index.html"
+}

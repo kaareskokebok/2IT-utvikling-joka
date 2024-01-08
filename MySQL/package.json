@@ -1,0 +1,19 @@
+{
+  "name": "stud-database",
+  "version": "1.0.0",
+  "description": "En oversikt over elever, aldre og klasse.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "elever",
+    "klasse"
+  ],
+  "author": "erlendj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
