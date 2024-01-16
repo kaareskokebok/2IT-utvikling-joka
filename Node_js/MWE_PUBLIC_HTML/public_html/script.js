@@ -13,7 +13,20 @@ function visTest(){
     }
     );
 }
-btnVisElever.onclick = visTest;
+
+function visAlleKunder(){
+    fetch('/allekundenavn')
+    .then(response => response.json()) // Konverterer responsen til json
+    .then(kunder => {
+        console.log(kunder);
+        let txt = "";
+        for(let kunde of kunder){
+            txt += kunde.name + "<br>";
+        }
+        txtUt.innerHTML = txt;
+    });
+}
+btnVisElever.onclick = visAlleKunder;
 
 // TODO: legg til en knapp til, når den trykkes, hentes
 // fetch('/nytekst) og teksten i txtUt endres til 
