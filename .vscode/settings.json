@@ -13,6 +13,20 @@
             "database": "School",
             "username": "root",
             "password": "uctoi7p83"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "elevdb_con",
+            "database": "school",
+            "username": "teacher1",
+            "password": "Uctoi7p83"
         }
     ],
     "livePreview.defaultPreviewPath": "/MySQL/userauth/index.html"

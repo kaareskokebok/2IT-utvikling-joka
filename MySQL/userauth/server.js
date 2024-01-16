@@ -15,7 +15,7 @@ connection.connect();
 const app = express();
 
 // Serve static files from the "public" directory
-app.use(express.static('public'));
+app.use(express.static('PUBLIC_HTML'));
 
 // Endpoint to get the first student's email.
 app.get('/first-student-email', (req, res) => {

@@ -2,6 +2,11 @@ SELECT * FROM students;
 SELECT name FROM students;
 
 -- @block
+UPDATE studenter
+SET alder = 21
+WHERE navn = 'Ola';
+
+-- @block
 CREATE TABLE USERS(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(255) NOT NULL UNIQUE,
