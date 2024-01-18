@@ -31,7 +31,34 @@ app.get('/forstekunde', (req, res) => {
             res.send(results);
         }
     })
+});
+
+// Lag en knapp som lar deg hente ut
+// navnet til personen som har adresse
+// 'Sky st 331'
+app.get('/hentsky', (req, res) => {
+    let sql = 'SELECT name FROM customers WHERE address="Sky st 331";';
+    connection.query(sql, (error, results) => {
+        if (error) throw error;
+        else{
+            res.send(results);
+        }
+    })
 })
+
+// med request
+// fetch(`/sok-kunde?name
+app.get('/sok-kunde', (req, res) => {
+    let sokenavn = req.query.name;
+    let sql = 'SELECT * FROM customers WHERE name = ?;';
+    connection.query(sql, [sokenavn], (error, results) => {
+        if (error) throw error;
+        else{
+            res.send(results);
+        }
+    })
+})
+
 
 
 // Sende data gjennom node

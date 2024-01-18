@@ -40,15 +40,32 @@ function visForsteKunde(){
     })
 }
 
+function visNavnSky(){
+    fetch('/hentsky')
+    .then(response => response.json())
+    .then(kunde => {
+        console.log(kunde);
+        // TODO: skriv ut 'xxx bor på Sky st 331'.
+    })
+}
+
+function sokNavn(){
+    // Lese inn søkenavn fra input-boksen
+    let navn = inpNavn.value;
+    console.log(navn);
+    // Sende inn inn navnet som en del av fetch
+    fetch(`/sok-kunde?name=${encodeURIComponent(navn)}`)
+    .then(response => response.json())
+    .then(kunde => {
+        console.log(kunde);
+    })
+}
+
 let txtUt = document.getElementById("txtUt");
+let inpNavn = document.getElementById("inpNavn");
+
 btnVisElever.onclick = visAlleKunder;
 btnVisForste.onclick = visForsteKunde;
+btnVisNavnSky.onclick = visNavnSky;
+btnSokNavn.onclick = sokNavn;
 
-// TODO: Skrive ut den første kunden med navn
-// og adresse. 
-// 1. Ny knapp på index.html
-// 2. app.get på server.js
-// 3. Funksjon knyttet til knappen i script.js:
-// Denne bruker fetch for å hente ruten fra app.get
-// 4. Pakke ut dataene og presentere de i txtUt på
-// formen 'Arne Pettersen, Rådyrvegen 25'.
