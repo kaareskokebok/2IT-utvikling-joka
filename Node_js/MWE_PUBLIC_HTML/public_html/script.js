@@ -58,6 +58,22 @@ function sokNavn(){
     .then(response => response.json())
     .then(kunde => {
         console.log(kunde);
+        let kundenavn = kunde[0].name;
+        let adresse = kunde[0].address;
+        let id = kunde[0].id;
+
+        let liste = document.createElement('ul');
+        let navnpkt = document.createElement('li');
+        navnpkt.textContent = `Navn: ${kundenavn}`;
+        liste.appendChild(navnpkt);
+        // Tilsvarende for adresse 
+        let adressepkt = document.createElement('li');
+        adressepkt.textContent = `Adresse: ${adresse}`;
+        liste.appendChild(adressepkt);
+        // Legg til liste inni div-elementet txtUt
+        txtUt.innerHTML = "";  // Fjerner det gamle innholdet
+        txtUt.appendChild(liste);
+        
     })
 }
 
