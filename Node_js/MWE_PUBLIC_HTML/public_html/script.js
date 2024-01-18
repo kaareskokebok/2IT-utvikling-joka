@@ -57,6 +57,11 @@ function sokNavn(){
     fetch(`/sok-kunde?name=${encodeURIComponent(navn)}`)
     .then(response => response.json())
     .then(kunde => {
+        // Sjekk om navnet ikke finnes
+        if(kunde.length === 0){
+            txtUt.textContent = `${navn} finnes ikke.`;
+            return;
+        }
         console.log(kunde);
         let kundenavn = kunde[0].name;
         let adresse = kunde[0].address;
