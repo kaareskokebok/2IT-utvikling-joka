@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Information</title>
+    <hta:application id="systemInfoApp" />
+    <script type="text/javascript">
+        function showSystemInfo() {
+            var userName = '';
+            var systemTime = new Date().toLocaleTimeString();
+
+            // VBScript to get the username
+            var shell = new ActiveXObject("WScript.Shell");
+            userName = shell.ExpandEnvironmentStrings("%USERNAME%");
+
+            document.getElementById('userInfo').innerHTML = 'Current User: ' + userName;
+            document.getElementById('timeInfo').innerHTML = 'System Time: ' + systemTime;
+        }
+
+        window.onload = showSystemInfo;
+    </script>
+</head>
+<body>
+    <h2>System Information</h2>
+    <p id="userInfo"></p>
+    <p id="timeInfo"></p>
+</body>
+</html>

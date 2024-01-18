@@ -26,13 +26,29 @@ function visAlleKunder(){
         txtUt.innerHTML = txt;
     });
 }
-btnVisElever.onclick = visAlleKunder;
 
-// TODO: legg til en knapp til, når den trykkes, hentes
-// fetch('/nytekst) og teksten i txtUt endres til 
-// Min nye tekst er fin!
-// 1. Legg til knappen 'Kul knapp'
-// 2. Legg til korrekt app.get i server.js
-// 3. Legg til funksjon i script.js som kjøres når 
-// knappen trykkes.
-// 4. Skriv fetch-koden i funksjonen i js.
+function visForsteKunde(){
+    fetch('/forstekunde')
+    .then(response => response.json())
+    .then(kunde => {
+        console.log(kunde);  // array med 1 verdi
+        console.log(kunde[0]);  // objekt med to nøkler (name, address)
+        console.log(kunde[0].name);  // String (tekst)
+
+        let minKunde = kunde[0];
+        txtUt.textContent = `Navn: ${minKunde.name}, adresse: ${minKunde.address}`;
+    })
+}
+
+let txtUt = document.getElementById("txtUt");
+btnVisElever.onclick = visAlleKunder;
+btnVisForste.onclick = visForsteKunde;
+
+// TODO: Skrive ut den første kunden med navn
+// og adresse. 
+// 1. Ny knapp på index.html
+// 2. app.get på server.js
+// 3. Funksjon knyttet til knappen i script.js:
+// Denne bruker fetch for å hente ruten fra app.get
+// 4. Pakke ut dataene og presentere de i txtUt på
+// formen 'Arne Pettersen, Rådyrvegen 25'.

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <hta:application id="calculatorApp" />
+    <script type="text/javascript">
+        function calculate() {
+            var num1 = parseFloat(document.getElementById('number1').value);
+            var num2 = parseFloat(document.getElementById('number2').value);
+            var operation = document.getElementById('operation').value;
+            var result = 0;
+
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+            }
+
+            document.getElementById('result').value = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>Simple Calculator</h2>
+    <input type="text" id="number1" placeholder="Number 1">
+    <select id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="number2" placeholder="Number 2">
+    <button onclick="calculate()">Calculate</button>
+    <input type="text" id="result" placeholder="Result" readonly>
+</body>
+</html>

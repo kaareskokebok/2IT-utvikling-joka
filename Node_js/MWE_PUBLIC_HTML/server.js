@@ -23,11 +23,26 @@ app.get('/allekundenavn', (req, res) => {
         }
     })
 })
+// Hente første kunde med navn og adresse
+app.get('/forstekunde', (req, res) => {
+    connection.query('SELECT name, address FROM customers LIMIT 1;', (error, results) => {
+        if (error) throw error;
+        else{
+            res.send(results);
+        }
+    })
+})
+
+
 // Sende data gjennom node
+// Arrow-function
 app.get('/test', (req, res) => {
     res.send("Koko på do");
 });
-
+// vanlig function
+// app.get('/test', function (req, res) {
+//     res.send("Koko på do");
+// });
 const PORT = 80;
 
 
