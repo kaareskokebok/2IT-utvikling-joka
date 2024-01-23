@@ -5,16 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elevene</title>
     <script defer src="script.js"></script>
+    <style>
+        body{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+            justify-content: center;
+            align-content: center;
+        }
+
+        body * {
+        margin: 10px;
+        }
+
+        #buttonsContainer{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </head>
 <body>
     <h1>Velkommen til klasse 5A. Kaares side!</h1>
+    <div id="buttonsContainer">
     <button id="btnVisElever">Vis elever</button>
     <button id="btnVisForste">Vis første elev</button>
     <button id="btnVisNavnSky">Vis navn til Sky st 331</button>
+</div>
     
-    <br>
-    <label for="inpNavn">Navn:</label><br>
-    <input type="text" id="inpNavn"><br>
+    <label for="inpNavn">Navn:</label>
+    <input type="text" id="inpNavn">
     <button id="btnSokNavn">Søk på navn</button>
     <div id="txtUt"></div>
 </body>

@@ -27,7 +27,9 @@ function flyttKula(){
 function skyt(){
     erILufta = true;
     skytBtn.disabled = true;
-    flyttKula();
+    let lyd = new Audio("shoot.mp3");
+    lyd.play();
+    setTimeout(flyttKula,500);
 
 }
 let xpos = 250;

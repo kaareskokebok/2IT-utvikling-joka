@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+main {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top:20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"], input[type="button"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+header{
+    padding:20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#txtUt{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.threads-container{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.thread{
+    flex-grow: 1;
+    padding: 10px;
+    background-color:beige;
+    opacity: 0.6;
+    transition: 0.5s;
+    width: 300px;
+    max-width: 300px;
+}
+.thread:hover{
+    opacity: 0.8;
+}
+
+.nyMelding{
+    background-color: lightblue;
+    padding: 5px;
+    width: 100%;
+}
+
+/* Stiler for større skjerm enn mobil */
+@media screen and (min-width: 920px) {
+    .threads-container {
+        width: 80vw;
+    }
+}
