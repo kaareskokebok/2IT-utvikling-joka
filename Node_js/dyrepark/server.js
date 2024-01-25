@@ -29,6 +29,18 @@ app.get('/alledyrnavn', (req, res) => {
         }
     })
 })
+
+// Query til databasen
+app.get('/alleartsnavn', (req, res) => {
+    let sql = 'SELECT navn FROM art;';
+    connection.query(sql, (error, results) => {
+        if (error) throw error;
+        else{
+            res.send(results);
+        }
+    })
+});
+
 app.listen(PORT, function (){
     console.log('Server kjører på port 80');
 });
