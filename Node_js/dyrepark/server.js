@@ -41,6 +41,17 @@ app.get('/alleartsnavn', (req, res) => {
     })
 });
 
+// Henter ut alle dyr med beskrivelsen
+app.get('/dyrmedbeskrivelse', (req, res) => {
+    let sql = 'SELECT navn, beskrivelse FROM dyr;';
+    connection.query(sql, (error, results) => {
+        if (error) throw error;
+        else{
+            res.send(results);
+        }
+    })
+})
+
 app.listen(PORT, function (){
     console.log('Server kjører på port 80');
 });

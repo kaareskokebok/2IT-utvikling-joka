@@ -17,6 +17,25 @@ function visArterNavn(){
     }) 
 }
 
+function visDyrOgBeskrivelse(){
+    fetch('/dyrmedbeskrivelse')
+    .then(respons => respons.json())
+    .then(dyr => {
+        console.log(dyr);
+        console.log(dyr[0]);
+        console.log(dyr[0].navn);
+        console.log(dyr[0].beskrivelse);
+
+        let htmldyr = "<h2>Våre dyr</h2> <hr />";
+        for (let nesteDyr of dyr){
+            htmldyr += `<h3>${nesteDyr}</h3>`;
+            htmldyr += `<p>${nesteDyr}</p>`;
+        }
+    }) 
+}
+let btnVisDyr = document.getElementById("btnVisDyr");
+btnVisDyr.onclick = visDyrOgBeskrivelse;
+
 let btnVisArterNavn = document.getElementById("btnVisArterNavn");
 btnVisArterNavn.onclick = visArterNavn;
 // btnVisArterNavn.addEventListener("click", visArterNavn);
