@@ -59,6 +59,7 @@ Dokumentasjonen bør være klar og enkel å forstå. Du kan inkludere:
 - **Tekstdokumenter eller Wiki-sider**: For mer utfyllende dokumentasjon, kan du bruke separate dokumenter eller wiki-sider knyttet til prosjektet.
 
 Ved å følge disse retningslinjene, vil dokumentasjonen av prosjektet ditt hjelpe brukerne å forstå og effektivt bruke applikasjonen du har utviklet.
+
 ---
 ## Krav til nettsidene
 
