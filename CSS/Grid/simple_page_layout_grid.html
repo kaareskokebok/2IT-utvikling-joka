@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-layout</title>
+    <style>
+        html{
+            background-color: black;
+        }
+        body{
+            display:grid;
+            height:100vh;
+            grid-template-columns: 1fr 5fr;
+            grid-template-rows: 1fr 5fr 1fr;
+            background-color: bisque;
+            gap:0px;
+            max-width:1200px;
+            margin:0 auto;
+        }
+        header{
+            background-color: blue;
+            color: white;
+            grid-column: 1/3;
+            text-align: center;
+        }
+        nav{
+            background-color: darkblue;
+            color: white;
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        main{
+            grid-column:2/3;
+            grid-row: 2/3;
+        }
+        footer{
+            text-align: center;
+            grid-area: -2/1/-1/-1;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <header>Overskrift</header>
+<nav>Navigasjon</nav>
+<main>
+    Hovedinnhold her
+</main>
+    <footer>Footer: Laget av...</footer>
+</body>
+</html>
