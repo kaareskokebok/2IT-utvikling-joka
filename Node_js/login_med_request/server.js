@@ -38,8 +38,9 @@ app.get('/bruker', (req, res) =>{
 // f.eks. localhost/login?username=Ola&password=p123
 app.get('/login', (req, res) =>{
     let username  = req.query.username;
-    let sql = 'SELECT * FROM users WHERE brukernavn = ?;'
-    connection.query(sql, [username], (error, results) => {
+    let password  = req.query.password;
+    let sql = 'SELECT * FROM users WHERE brukernavn=? AND passord=?;'
+    connection.query(sql, [username,password], (error, results) => {
         if (error) throw error;
         else{
             res.send(results);
@@ -47,6 +48,16 @@ app.get('/login', (req, res) =>{
     });
 });
 
+
+app.get('/allUsers', (req, res) => {
+    let sql = 'SELECT fornavn, etternavn, bruker_info FROM users;'
+    connection.query(sql, [], (error, results) => {
+        if (error) throw error;
+        else{
+            res.send(results);
+        }
+    });
+});
 
 const PORT = 80;
 app.listen(PORT, function (){
