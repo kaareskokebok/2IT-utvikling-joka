@@ -1,0 +1,87 @@
+/* Fargpalett fra mørkest til lysest
+#3C3744
+#090C9B
+#3D52D5
+#B4C5E4
+#FBFADA 
+*/
+html{
+    background-color: black;
+}
+ body{
+    margin:0 auto;
+    padding:0px;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    gap:20px;
+}
+ 
+header, footer{
+    background-color: black;
+    color: white;
+    width:100%;
+    padding:30px;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height:100%;
+}
+/* Fjerner kulepunkter */
+nav li{
+    list-style: none;
+}
+
+nav ul{
+    display: flex;
+    gap:15px;
+}
+
+nav a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    transition:0.8s;
+    display:inline-block;
+}
+
+nav a:hover{
+    /* color: #B4C5E4; */
+    /* transform: translateX(-4px) translateY(-4px); */
+    /* box-shadow: 0 3px #ADBC9F; Simulate a bottom border */
+    box-shadow: 0 3px white;
+}
+nav a.active{
+    color: lightgray;
+}
+
+main{
+    width:50%;
+    flex-grow:1;
+    margin-left:25%;
+    /* background-color:#212529; */
+    color:white;
+    padding:20px;
+}
+
+
+@media (max-width: 790px){
+    .header-container{
+        flex-direction: column;
+    }
+    .header-container h1{
+        margin-bottom:0;
+    }
+
+} 
