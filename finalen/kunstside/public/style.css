@@ -1,0 +1,58 @@
+/* Fargepanel: 
+1A4D2E mørk grønn
+4F6F52 grønn
+E8DFCA beige
+F5EFE6 lys beige 
+*/
+body{
+    background-color: white;
+    margin:0;
+}
+header{
+    background-color: #1A4D2E;
+    padding:20px;
+}
+
+.galleri figure{
+    width: 300px;
+    border: 3px solid #E8DFCA;
+}
+.galleri img{
+    width:100%;
+}
+.galleri figcaption{
+    padding-left:20px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    background-color: #1A4D2E;
+}
+/* TODO: fiks stil for footer */
+/* HTML TODO: 
+Fiks kontaktskjema: 
+Felter:
+Emne
+E-post
+Melding
+Sende-knapp
+
+JavaScript-TODO: Når et bilde trykkes, skal det forstørres!
+Når du trykker utenfor bilde, skal forstørrelsen avsluttes.
+*/
+
+/* Hvordan få figures i et grid? 
+f.eks. flex med wrap*/
+
+
+@media screen and (min-width: 900px) {
+   .galleri{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .galleri figure{
+        flex: 1 1 200px;
+    }
+}
+

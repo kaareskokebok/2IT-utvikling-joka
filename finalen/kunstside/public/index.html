@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -16,8 +17,8 @@
         <figure>
             <img src="https://picsum.photos/400?random=1" alt="">
             <figcaption>
-                <h4>Tittel</h4>
-                <p>Beskrivelse</p>
+            <h4>Tittel</h4>
+            <p>Beskrivelse</p>
                 <p>2449,-</p>
             </figcaption>
         </figure>
@@ -64,10 +65,20 @@
     </section>
     
     <section class="kontakt">
+        <form>
+            <label for="inpEmne">Emne:</label>
+            <input type="text" id="inpEmne">
+            <label for="inpMelding">Melding:</label>
+            <input type="text" id="inpMelding">
+            <label for="inpEpost">E-post:</label>
+            <input type="email" id="inpEpost">
+            <input type="submit" value="Send melding">
+        </form>
+        
     </section>
 
     <footer>
-        Laget av Jens
+        Laget av Jens Bergenstolt.
     </footer>
 </body>
 </html>
