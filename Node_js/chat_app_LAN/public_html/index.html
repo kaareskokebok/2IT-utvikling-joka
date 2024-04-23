@@ -13,11 +13,11 @@
     </header>
     <main>
         <h1>Innlogging</h1>
-        <form id="loginForm">
+        <form id="loginForm" onsubmit="loggInn(event)">
             <input type="text" name="username" placeholder="Brukernavn" required>
             <input type="password" name="password" placeholder="Passord" required>
             <input type="submit" value="Logg inn">
-            <input type="button" value="Registrer ny bruker">
+            <!-- <input type="button" value="Registrer ny bruker"> -->
         </form>
         <div id="txtUt"></div>
     </main>
