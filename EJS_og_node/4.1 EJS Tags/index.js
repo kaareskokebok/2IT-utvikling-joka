@@ -1,4 +1,11 @@
 import express from "express";
+// import nodemon from "nodemon";
+
+// nodemon({
+//   script: 'index.js',
+//   ext: 'js json'
+// });
+
 const app = express();
 const port = 3000;
 
