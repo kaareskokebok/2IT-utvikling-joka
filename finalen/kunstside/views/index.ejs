@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<div id="blurOverlay"></div>
+
+<%- include("partials/galleri") %>
+    
+    <section class="kontakt">
+        
+        <form>
+            <h2>Kontakt- og bestillingsskjema</h2>
+            <label for="inpEmne">Emne:</label>
+            <input type="text" id="inpEmne">
+            <label for="inpMelding">Melding:</label>
+            <textarea id="inpMelding"></textarea>
+            <label for="inpEpost">E-post:</label>
+            <input type="email" id="inpEpost">
+            <input type="submit" value="Send melding">
+        </form>
+        
+    </section>
+</div>
+
+<%- include("partials/footer.ejs") %>
