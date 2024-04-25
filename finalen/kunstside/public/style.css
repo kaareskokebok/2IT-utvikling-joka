@@ -24,23 +24,55 @@ header{
 }
 
 .galleri figure {
+    position: relative;
     flex: 1 1 300px; /* Adjust basis to 300px, but allow shrink and grow */
     max-width: 300px;
     margin-left:auto;
     border: 3px solid #E8DFCA;
     margin: 10px; /* Adds margin for spacing between items */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    overflow: hidden; /* Ensures no content spills out */
+    overflow: visible; /* Ensures no content spills out */
 }
 
 .galleri img {
+    position: relative;
     width: 100%;
     height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below the image */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom animation */
+    cursor: zoom-in; /* Indicate clickable element */
 }
+.galleri img.zoomed {
+    position: absolute; /* Make absolute only on hover */
+    /* top: 50%;
+    left: 50%; */
+    transform:  scale(1.4); /* Adjust position and scale */
+    z-index: 2; /* Higher z-index to be on top */
+    cursor: zoom-out;
+}
+#blurOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade in/out for blur */
+    z-index: -1; /* Behind the zoomed image (z-index: 2) */
+  }
+  
+  #blurOverlay.blur {
+    opacity: 1; /* Becomes visible when active */
+    z-index:1;
+  }
 
 .galleri figcaption {
     padding-left: 20px;
+}
+
+.zoom-out{
+    cursor:zoom-out;
 }
 
 /* Responsive adjustments */
@@ -89,28 +121,4 @@ footer{
     color: white;
     text-align: center;
 }
-/* TODO: fiks stil for footer */
-/* HTML TODO: 
-Fiks kontaktskjema: 
-Felter:
-Emne
-E-post
-Melding
-Sende-knapp
-
-JavaScript-TODO: Når et bilde trykkes, skal det forstørres!
-Når du trykker utenfor bilde, skal forstørrelsen avsluttes.
-*/
-
-/* Hvordan få figures i et grid? 
-f.eks. flex med wrap*/
-
-
-/* @media screen and (min-width: 900px) {
-   
-    .galleri figure{
-        flex: 25%;
-        max-width: 25%;
-    }
-} */
 
