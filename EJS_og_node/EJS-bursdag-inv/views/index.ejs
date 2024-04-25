@@ -7,11 +7,11 @@
 </head>
 <body>
     <!-- navn, navnGjest, alder, tid, sted -->
-    <h1>Invitasjon til <%= navn >s bursdag</h1>
-    <h3>[Kari] fyller [20] år og vil invitere deg, 
-        kjære [Gunnar].
+    <h1>Invitasjon til <%= navn %>s bursdag</h1>
+    <h3><%= navn %> fyller <%= alder %> år og vil invitere deg, 
+        kjære <%= navnGjest %>.
     </h3>
-    <p>Bursdagen foregår [kl. 1200 førstkommende lørdag] på [Nannestad kommunehus].</p>
+    <p>Bursdagen foregår <%= tid %> på <%= sted %>.</p>
     <p>Håper du vil komme.</p>
 </body>
 </html>
