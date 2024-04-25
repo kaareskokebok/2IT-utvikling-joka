@@ -20,7 +20,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: -10px; /* Adds negative margin to counteract the padding for even spacing */
+    
 }
 
 .galleri figure {
