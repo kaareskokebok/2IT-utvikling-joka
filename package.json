@@ -1,0 +1,12 @@
+{
+  "name": "2it-utvikling-joka",
+  "version": "1.0.0",
+  "description": "- vurdere fordeler og ulemper ved ulike programmeringsspråk og velge og anvende relevante programmeringsspråk og algoritmer i eget arbeid\r - lage og begrunne funksjonelle krav til en IT-løsning basert på behovskartlegging\r - vurdere brukergrensesnitt til IT-tjenester og designe tjenester som er tilpasset brukernes behov\r - gjøre rede for hensikten med teknisk dokumentasjon og utarbeide teknisk dokumentasjon for IT-løsninger\r - beskrive og anvende relevante versjonskontrollsystemer i utviklingsprosjekter\r - designe og implementere IT-tjenester med innebygget personvern\r - analysere digitale trusler, verdier og sårbarheter og utvikle applikasjoner med innebygget sikkerhet\r - anvende relevant testmiljø og utføre testing tilpasset IT-løsningen som utvikles\r - modellere og opprette databaser for informasjonsflyt i systemer\r - beskrive ulike datalagringsmodeller og metoder for å hente ut og sette inn bestemte data fra databaser som brukes av andre systemer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
