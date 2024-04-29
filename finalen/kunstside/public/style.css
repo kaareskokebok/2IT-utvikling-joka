@@ -7,7 +7,16 @@ F5EFE6 lys beige
 body{
     background-color: white;
     margin:0;
-    
+}
+.container {
+    min-height: 100vh;  /* Ensure it is at least the height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left:0;
+}
+body > *{
+    padding-left:30px;
 }
 header{
     background-color: #1A4D2E;

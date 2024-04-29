@@ -6,14 +6,16 @@
     
     <section class="kontakt">
         
-        <form>
+        <form action="/submit-form" method="POST">
             <h2>Kontakt- og bestillingsskjema</h2>
             <label for="inpEmne">Emne:</label>
-            <input type="text" id="inpEmne">
+            <input type="text" id="inpEmne" name="emne">
             <label for="inpMelding">Melding:</label>
-            <textarea id="inpMelding"></textarea>
+            <textarea id="inpMelding" name="melding"></textarea>
             <label for="inpEpost">E-post:</label>
-            <input type="email" id="inpEpost">
+            <input type="email" id="inpEpost" name="epost">
+            <label for="inpNavn">Navn:</label>
+            <input type="text" id="inpNavn" name="navn">
             <input type="submit" value="Send melding">
         </form>
         
