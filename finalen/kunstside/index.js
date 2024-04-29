@@ -42,7 +42,9 @@ function sendEpost(formData){
         service: 'gmail',
         auth: {
             user: email,
-            pass: appPass  // søk app pass under sikkerhet, i konto-administrasjon
+            pass: appPass  
+            // Dersom du har to-faktor på gmail, søk app pass under sikkerhet,
+            // i konto-administrasjon
         }
     });
 
