@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<%- include("partials/galleri.ejs") %>
+
+    <section class="kontakt">
+        <form method="post" action="/submit">
+            <h2>Kontakt- og bestillingsskjema</h2>
+            <label for="inpEmne">Emne:</label>
+            <input type="text" id="inpEmne" name="emne">
+
+            <label for="inpMelding">Melding:</label>
+            <textarea id="inpMelding" name="melding"></textarea>
+
+            <label for="inpNavn">Navn:</label>
+            <input type="text" name="navn" id="inpNavn">
+
+            <label for="inpEpost">E-post:</label>
+            <input type="email" id="inpEpost" name="epost">
+            <input type="submit" value="Send melding">
+        </form>
+        
+    </section>
+</div>
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
