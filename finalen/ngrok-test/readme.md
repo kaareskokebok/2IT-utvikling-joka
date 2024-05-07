@@ -1,6 +1,6 @@
 # Launch your node.js project to the internet for free
 
-## Step 1: Installation of ngrok
+## Using ngrok
 1. Install Chocolateley (a package manager for Windows).
 2. Run a terminal as admin.
 3. Run the command
