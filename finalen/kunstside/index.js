@@ -26,7 +26,8 @@ app.post("/submit", (req, res) => {
     console.log(req.body);
     let data = {
         kundenavn: req.body.navn,
-        kundeepost: req.body.epost
+        kundeepost: req.body.epost,
+        melding: req.body.melding
     };
     sendEpost(data);
     res.render("formSubmit.ejs", data);
@@ -41,13 +42,19 @@ function sendEpost(data){
         }
     });
 
-    let emailContent = `Morn, ${data.kundenavn}`;
+    let emailContent = `<h1 style="color:blue">Morn, ${data.kundenavn}</h1>
+    <p>Takk for din melding. Her er en kopi av meldingen
+    du sendte:</p>
+    <p>${data.melding}</p>
+    <p>Med vennlig hilsen</p>
+    <p><strong>Kunstnern'</strong></p>
+    <img width="200px" src="https://picsum.photos/400?random=6" alt="Kunstbilde">`;
 
     let mailOptions = {
         from: email,
         to: data.kundeepost,
         subject: "epost fra skjema, spam",
-        text: emailContent  // html hvis det er html
+        html: emailContent  // html hvis det er html
     };
     transporter.sendMail(mailOptions, function(error, info){
         if (error){
@@ -57,6 +64,3 @@ function sendEpost(data){
         }
     });
 }
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
