@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Liste over elever</h1>
-    <ul>
-        <% elever.forEach(elev => { %>
-            <li><%= elev.fornavn %>. Klasse: <%= elev.klasse %></li>
-        <% }); %>
-    </ul>
+<%- include("partials/header.ejs") %>
+    <a href="/showStudents">
+        <button >Vis elever</button>
+      </a>
+      <%- include("visElever.ejs") %>
 </body>
 </html>

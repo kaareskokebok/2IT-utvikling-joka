@@ -1,0 +1,8 @@
+<% if(locals.elever) {%>
+    <ul>
+        <% elever.forEach(elev => { %>
+            <li><%= elev.fornavn %>. Klasse: <%= elev.klasse %></li>
+        <% }); 
+        %>
+    </ul>
+    <% } %>
