@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 const app = express();
 const port = 3000;
 
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 // dotenv config og uthenting av data
 dotenv.config();
 const dbUser = process.env.DB_USER;
@@ -14,7 +16,7 @@ const dbPass = process.env.DB_PASS;
 const db = mysql.createConnection({
     host: 'localhost',
     user: dbUser,
-    password: dbPass,  // Erstatt med ditt passord
+    password: dbPass, 
     database: 'skole'
 });
 
@@ -32,6 +34,29 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {  
     res.render('index');
 });
+// Elev-side
+app.get("/elevlogin", (req, res) => {
+    res.render('elev');
+})
+// Elev logger seg inn
+app.post("/elevloginsubmit", (req, res) => {
+    // 1. Lese inn brukernavn og passord
+    console.log(req.body);
+    let username = req.body.brukernavn;
+    let userpass = req.body.passord;
+    // 2. Sjekke mot databasen
+    const query = 'SELECT * FROM elever WHERE brukernavn = ? AND passord = ?';
+  db.query(query, [username, userpass], (err, results) => {
+    // 3. Gi feilmelding, eller vise all elevinfo
+    if (err) throw err;
+    if (results.length > 0) {
+        console.log(results);
+      res.render('elev', {elevdata: results[0]});
+    } else {
+      res.send('<h3>Invalid username or password</h3>');
+    }
+  });
+})
 
 app.get('/showStudents', (req, res) => {
     let sql = 'SELECT * FROM elever';
