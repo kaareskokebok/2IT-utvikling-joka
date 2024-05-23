@@ -29,14 +29,8 @@ db.connect((err) => {
 app.set('view engine', 'ejs');
 
 // Route for startside
-app.get('/', (req, res) => {
-    let sql = 'SELECT * FROM elever';
-    db.query(sql, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        console.log(result[0].fornavn);  // Jens
-        res.render('index');
-    });
+app.get('/', (req, res) => {  
+    res.render('index');
 });
 
 app.get('/showStudents', (req, res) => {
