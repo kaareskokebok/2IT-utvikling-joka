@@ -46,17 +46,38 @@ app.post("/elevloginsubmit", (req, res) => {
     let userpass = req.body.passord;
     // 2. Sjekke mot databasen
     const query = 'SELECT * FROM elever WHERE brukernavn = ? AND passord = ?';
-  db.query(query, [username, userpass], (err, results) => {
+    db.query(query, [username, userpass], (err, results) => {
     // 3. Gi feilmelding, eller vise all elevinfo
     if (err) throw err;
     if (results.length > 0) {
-        console.log(results);
-      res.render('elev', {elevdata: results[0]});
-    } else {
-      res.send('<h3>Invalid username or password</h3>');
-    }
-  });
-})
+        const studentId = results[0].id;
+
+            // Fetch courses and grades for this student
+            const coursesQuery = `
+                SELECT k.kursid, k.kursnavn, ek.karakter 
+                FROM elever_kurs ek
+                JOIN kurs k ON ek.kursid = k.kursid
+                WHERE ek.elev_id = ?
+            `;
+            db.query(coursesQuery, [studentId], (err, courseResults) => {
+                if (err) throw err;
+                console.log(courseResults, courseResults[0]);
+                // 3. Show all student info and courses with grades
+                res.render('elev', 
+                    {elevdata: results[0],
+                        courses: courseResults
+                    });
+                        
+                    
+                });
+            }
+            else {
+                res.send('<h3>Invalid username or password</h3>');
+              }
+        });
+
+    });
+
 
 app.get('/showStudents', (req, res) => {
     let sql = 'SELECT * FROM elever';

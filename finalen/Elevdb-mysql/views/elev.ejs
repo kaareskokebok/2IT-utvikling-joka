@@ -11,5 +11,5 @@
 <!-- TODO: bruk ejs til å sjekke om brukeren er logget inn, og vis deretter info om eleven -->
 <% if(locals.elevdata) { %>
 <h3>Hei, <%= elevdata.fornavn %>. Har du en fin dag på skolen?</h3>
-
+<p>Du går i klasse <%= elevdata.klasse %></p>
     <% } %>
