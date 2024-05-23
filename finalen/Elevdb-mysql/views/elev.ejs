@@ -13,3 +13,11 @@
 <h3>Hei, <%= elevdata.fornavn %>. Har du en fin dag på skolen?</h3>
 <p>Du går i klasse <%= elevdata.klasse %></p>
     <% } %>
+
+    <h3>Dine fag og karakterer:</h3>
+    <hr>
+    <ul>
+        <% courses.forEach(course => { %>
+            <li><%=course.kursnavn %>. Karakter: <%= course.karakter %></li>
+        <% }) %>
+    </ul>
