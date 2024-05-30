@@ -21,8 +21,10 @@ app.get("/", (req, res) => {
 app.post("/nymelding", (req, res) => {
     console.log(req.body);
     // 1. Legg til nyeste melding i slutten av arrayet meldinger
+    let nyMelding = req.body.melding;
+    meldinger.push(nyMelding);
     // 2. Kjør res.render med meldinger som data, og index.ejs som side.
-    res.render("index");
+    res.render("index.ejs", {meldinger});
 });
 
 app.listen(port, () => {
