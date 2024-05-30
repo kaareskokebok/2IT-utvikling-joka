@@ -30,6 +30,9 @@ app.post("/nymelding", (req, res) => {
     res.render("index.ejs", {meldinger, navnene});
 });
 
+app.get("/meldinger", (req, res) => {
+    res.json({ meldinger, navnene });
+});
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);
 });

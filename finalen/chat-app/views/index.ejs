@@ -9,7 +9,7 @@
         <h1>2IT Kose-Chat</h1>
         <form action="/nymelding" method="post" id="meldingForm">
             <label for="inpNavn">Ditt navn:</label><br />
-            <input type="text" id="inpNavn" name="navn" required/>
+            <input type="text" id="inpNavn" name="navn" required/><br>
             <label for="inpMelding">Skriv ny melding:</label><br />
             <input type="text" id="inpMelding" name="melding" />
             <!-- TODO: legg til navn input-felt. Og vis navnet som en del
@@ -28,7 +28,11 @@
             <!-- 1. Slett alt innhold i meldingerContainer: TODO senere -->
            
             <% for(let i=meldinger.length-1; i >= 0; i--) { %>
+                <% if(navnene[i] === "qwerty") { %>
+                    <h1>2itadmin: <%= meldinger[i] %></h1>
+                    <% } else{  %>
             <p><%= navnene[i] %>: <%= meldinger[i] %></p>
+            <% } %>
             <% } %>
         </div>
         <% } %>
@@ -45,6 +49,7 @@
                     }
                 });
             });
+
         </script>
     </body>
 </html>
