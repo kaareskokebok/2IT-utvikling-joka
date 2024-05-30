@@ -13,12 +13,14 @@
         </form>
 
         <!-- Finn ut hvordan du kan bruke setInterval til å oppdatere meldinger hvert 0.5 sek -->
-        <% setInterval() %> 
 
         <% if(locals.meldinger) { %>
         <div class="meldingerContainer">
             <!-- For hver melding, lag et nytt p element, og plasser meldingen i
             elementet.  -->
+            <!-- 1. Slett alt innhold i meldingerContainer -->
+            <% const container = document.querySelector('.meldingerContainer');
+            container.innerHTML = ''; %>
             <% for(let i=meldinger.length-1; i >= 0; i--) { %>
             <p><%= meldinger[i] %></p>
             <% } %>
