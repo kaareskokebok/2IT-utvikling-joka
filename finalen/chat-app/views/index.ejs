@@ -10,8 +10,21 @@
     <form action="/nymelding" method="post">
         <label for="inpMelding">Skriv ny melding:</label><br>
         <input type="text" id="inpMelding" name="melding">
-
     </form>
+
+    <div class="meldingerContainer">
+        <!-- Nyeste melding øverst -->
+        <p>Joda, Jensern her (med Gensern).</p>
+        <p>Morn du, hvem er du?</p>
+        <p>Hei, alle sammen.</p>
+    </div>
+
+    <div class="meldingerContainer">
+        For hver melding, lag et nytt p element, og plasser meldingen i elementet.
+        <% for(let i=meldinger.length-1; i >= 0; i--) { %>
+            <p><%= meldinger[i] %></p>
+        <% } %>
+    </div>
 
 
     <script>
