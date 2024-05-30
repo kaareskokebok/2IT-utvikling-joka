@@ -38,6 +38,25 @@ app.get('/', (req, res) => {
 app.get("/elevlogin", (req, res) => {
     res.render('elev');
 })
+
+// Lærer logger seg inn
+app.post("/larerloginsubmit", (req, res) => {
+    // 1. Lese inn brukernavn og passord
+    console.log(req.body);
+    let username = req.body.brukernavn;
+    let userpass = req.body.passord;
+    // 2. Sjekke mot databasen
+    const query = "SELECT * FROM lærere WHERE brukernavn = ? AND passord = ?";
+    db.query(query, [username, userpass], (err, results) => {
+        // 3. Gi feilmelding, eller vise all elevinfo
+        if (err) throw err;
+        if (results.length > 0) {
+            res.render("larer", { larerdata: results[0] });
+        } else {
+            res.send("<h3>Invalid username or password</h3>");
+        }
+    });
+});
 // Elev logger seg inn
 app.post("/elevloginsubmit", (req, res) => {
     // 1. Lese inn brukernavn og passord

@@ -1,2 +1,14 @@
 <%- include("partials/header.ejs") %>
 <h2>Lærer-innlogging</h2>
+
+<form action="/larerloginsubmit" method="post">
+    <label for="inpUser">Brukernavn:</label><br>
+    <input type="text" id="inpUser" name="brukernavn"><br>
+    <label for="inpPass">Passord:</label><br>
+    <input type="text" id="inpPass" name="passord"><br>¨
+    <input type="submit" value="Logg inn">
+</form>
+
+<% if(locals.larerdata) { %>
+
+<% } %>
