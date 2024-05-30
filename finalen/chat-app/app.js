@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
     // Vise fram index.ejs ved localhost:3000/
-    res.render("index.ejs");
+    res.render("index");
 });
 // Skjema
 app.post("/submit", (req, res) => {
@@ -18,7 +18,7 @@ app.post("/submit", (req, res) => {
     let data = {
         melding: req.body.melding
     };
-    res.render("formSubmit.ejs", data);
+    res.render("index", data);
 });
 
 app.listen(port, () => {
