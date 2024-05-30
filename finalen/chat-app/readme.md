@@ -1,5 +1,11 @@
 # Chat-app
 
+## Zip-file
+1. Unzip latest_version.zip
+2. Open folder with latest_version
+3. Run `npm i`
+4. Run `npx nodemon app.js`
+
 ## How to clone only this folder in 2IT-Utvikling repo
 1. Create a new folder chat-app.
 2. Open a terminal inside this folder.
