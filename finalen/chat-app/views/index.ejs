@@ -8,8 +8,15 @@
     <body>
         <h1>2IT Kose-Chat</h1>
         <form action="/nymelding" method="post" id="meldingForm">
+            <label for="inpNavn">Ditt navn:</label><br />
+            <input type="text" id="inpNavn" name="navn" required/>
             <label for="inpMelding">Skriv ny melding:</label><br />
             <input type="text" id="inpMelding" name="melding" />
+            <!-- TODO: legg til navn input-felt. Og vis navnet som en del
+            av meldingen. F.eks. 
+            Arne: Morn dere
+            Per: Halla, Arne. Står til? -->
+
         </form>
 
         <!-- Finn ut hvordan du kan bruke setInterval til å oppdatere meldinger hvert 0.5 sek -->
@@ -18,11 +25,10 @@
         <div class="meldingerContainer">
             <!-- For hver melding, lag et nytt p element, og plasser meldingen i
             elementet.  -->
-            <!-- 1. Slett alt innhold i meldingerContainer -->
-            <% const container = document.querySelector('.meldingerContainer');
-            container.innerHTML = ''; %>
+            <!-- 1. Slett alt innhold i meldingerContainer: TODO senere -->
+           
             <% for(let i=meldinger.length-1; i >= 0; i--) { %>
-            <p><%= meldinger[i] %></p>
+            <p><%= navnene[i] %>: <%= meldinger[i] %></p>
             <% } %>
         </div>
         <% } %>
