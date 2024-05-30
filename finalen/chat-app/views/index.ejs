@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>2IT Kose-Chat</h1>
-    <form action="/nymelding" method="post">
-        <label for="inpMelding">Skriv ny melding:</label><br>
-        <input type="text" id="inpMelding" name="melding">
-    </form>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>2IT Kose-Chat</h1>
+        <form action="/nymelding" method="post">
+            <label for="inpMelding">Skriv ny melding:</label><br />
+            <input type="text" id="inpMelding" name="melding" />
+        </form>
 
-    <div class="meldingerContainer">
-        <!-- Nyeste melding øverst -->
-        <p>Joda, Jensern her (med Gensern).</p>
-        <p>Morn du, hvem er du?</p>
-        <p>Hei, alle sammen.</p>
-    </div>
-
-    <div class="meldingerContainer">
-        For hver melding, lag et nytt p element, og plasser meldingen i elementet.
-        <% for(let i=meldinger.length-1; i >= 0; i--) { %>
+        <% if(locals.meldinger) { %>
+        <div class="meldingerContainer">
+            <!-- For hver melding, lag et nytt p element, og plasser meldingen i
+            elementet.  -->
+            <% for(let i=meldinger.length-1; i >= 0; i--) { %>
             <p><%= meldinger[i] %></p>
+            <% } %>
+        </div>
         <% } %>
-    </div>
 
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var input = document.getElementById('inpMelding');
-            input.addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                    event.preventDefault(); // Forhindre at ENTER legger til en ny linje
-                    document.getElementById('meldingForm').submit(); // Send skjemaet
-                }
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var input = document.getElementById("inpMelding");
+                input.addEventListener("keypress", function (event) {
+                    if (event.key === "Enter") {
+                        event.preventDefault(); // Forhindre at ENTER legger til en ny linje
+                        document.getElementById("meldingForm").submit(); // Send skjemaet
+                    }
+                });
             });
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>

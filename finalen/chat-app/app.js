@@ -7,18 +7,22 @@ const port = 3000;
 app.use(express.static("public"));
 // Lar oss bruke req.body for å hente skjemadata
 app.use(express.urlencoded({ extended: true }));
+// View engine
+// app.set("view engine", "ejs");
+
+// Meldinger lagres i et array
+let meldinger = ["Morn dere", "Har dere gjort leksene", "Nei, det var kjedelig."];
 
 app.get("/", (req, res) => {
     // Vise fram index.ejs ved localhost:3000/
-    res.render("index");
+    res.render("index.ejs", {meldinger}); //{meldinger: meldinger}
 });
 // Skjema
-app.post("/submit", (req, res) => {
+app.post("/nymelding", (req, res) => {
     console.log(req.body);
-    let data = {
-        melding: req.body.melding
-    };
-    res.render("index", data);
+    // 1. Legg til nyeste melding i slutten av arrayet meldinger
+    // 2. Kjør res.render med meldinger som data, og index.ejs som side.
+    res.render("index");
 });
 
 app.listen(port, () => {
