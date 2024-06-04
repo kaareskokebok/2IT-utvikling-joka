@@ -1,1 +1,4 @@
 node_modules/
+.env
+dev_plan_v2.md
+.vscode/
