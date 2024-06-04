@@ -17,7 +17,7 @@ This guide will help you enhance your chat app by adding user authentication, me
         id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) NOT NULL UNIQUE,
         email VARCHAR(100) NOT NULL UNIQUE,
-        password VARCHAR(255) NOT NULL
+        passwd VARCHAR(255) NOT NULL
     );
 
     CREATE TABLE messages (
@@ -104,7 +104,7 @@ app.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
 
   try {
-    const [result] = await pool.query("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", [username, email, password]);
+    const [result] = await pool.query("INSERT INTO users (username, email, passwd) VALUES (?, ?, ?)", [username, email, password]);
     res.redirect('/login');
   } catch (error) {
     res.send('Error creating user');
@@ -123,7 +123,7 @@ app.post("/login", async (req, res) => {
   if (rows.length > 0) {
     const user = rows[0];
 
-    if (password === user.password) {
+    if (password === user.passwd) {
       req.session.user = user;
       res.redirect('/');
     } else {
